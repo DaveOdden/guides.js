@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Guides.js</title>
+	<!--
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	-->
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/scripts.js"></script>
+	<link rel="stylesheet" href="css/style.css" />
+	<style>
+		#wrapper {
+			font-family: Helvetica, Arial, sans-serif;
+			padding: 1em 1.5em;
+		}
+		p {
+			line-height: 1.5em;
+		}
+	</style>
+</head>
+<body>
+	
+	<ul id="panel-menu">
+		<div class="header">
+			<span id="hide-panel"></span>
+		</div>
+		<li style="padding: 0 !important">
+			<h1>Guides.js</h1>
+		</li>
+		<li>
+			<div id="active-guides-cont" class="info-text">Active Guides: <span class="active-guides-count">0</span></div>
+			<div id="guide-spacing-indicator" class="info-text">Guide Spacing: <span class="guide-spacing-ind">OFF</span></div>
+		</li>
+		<li class="no-padding">
+			<button class="new-guide-button guide-js-button">New Guide</button>
+			<button class="hide-guide-button guide-js-button hide">Hide Guides (&#8984; + ;)</button>
+			<button class="remove-guides-button guide-js-button">Remove All Guides</button>
+		</li>
+		<span id="advanced-guides">
+		<li>
+			<h2 style="font-size: 1em; margin-bottom: 1em">Grid Management</h2>
+			<div style="margin-bottom: 1em">
+				<input type="text" placeholder="0px"/><span class="small-text">Y-axis spacing</span>
+				<div class="radio-div">
+					<input type="radio" id="y-radio" checked/><label for="y-radio">From Top</label>
+					<input type="radio" id="x-radio"/><label for="x-radio">From Guide</label>
+				</div>
+			</div>
+			<input type="text" placeholder="0px"/><span class="small-text">X-axis spacing</span>
+			<div class="radio-div">
+				<input type="radio" id="y-radio" checked/><label for="y-radio">From Top</label>
+				<input type="radio" id="x-radio"/><label for="x-radio">From Guide</label>
+			</div>	
+		</li>
+		<li class="versions">
+			<h2 style="font-size: 1em; margin-bottom: 1em">Guide Versions</h2>
+			<select style="margin-left: 1em">
+			  <option value="default">Default Guides</option>
+			</select>
+		</li>
+		</span>
+		<li>
+			<label>Advanced Guides</label>
+			<div class="toggle">
+				<span class="knob"></span>
+				<span class="on-off">OFF</span>
+			</div>
+		</li>
+	</ul>
+	
+<section id="guides-js">
+	<h1>Guides.js</h1>
+	<ul id="menu-controls">
+		<li class="menu-btn"><span>File</span></li>
+		<li class="menu-btn"><span>Advanced</span></li>
+		<li class="menu-btn"><span>View</span></li>
+		<li class="menu-btn"><span>Help</span></li>
+	</ul>
+	<span id="trash"><span class="icon animated"></span></span>
+	<section id="doc-info">
+		<div id="active-guides-cont" class="small-text">Active Guides: <span id="derived_guide_count" class="active-guides-count">0</span></div>
+		<div id="guide-spacing-indicator" class="small-text">Guide Spacing: <span class="guide-spacing-ind">OFF</span></div>
+	</section>
+</section>
+
+<ul id="menu-dropdown">
+	<span class="file dropdown-group">
+		<li class="new-guide-button">New Guide</li>
+		<li class="hide-guide-button" class="">Hide Guides</li>
+		<li class="remove-guides-button" class="">Clear Guides</li>
+	</span>
+	<span class="advanced dropdown-group">
+		<li id="pixel-ruler">Pixel Ruler</li>
+		<li id="guide-spacing">Guide Spacing</li>
+		<li>Guide Versioning</li>
+		<li>Grid Management</li>
+		<li>Manual Placement</li>
+	</span>
+	<span class="view dropdown-group">
+		<li class="checked">Menu Bar</li>
+		<li id="floating-panel">Floating Panel</li>
+	</span>
+	<span class="help dropdown-group">
+		<li>Quick Tips</li>
+	</span>
+</ul>
+
+<div id="x-ruler" class="hidden-element ruler"></div>
+<div id="y-ruler" class="hidden-element ruler"></div>
+
+<div id="info-box">
+	<div style="position: relative; height: 100%">
+		<div class="arrow-up"></div>
+		<div class="value"></div>
+		<div class="arrow-down"></div>
+	</div>
+</div>
+
+<div id="wrapper">
+<h1>Generic Heading 1</h1>
+<br>
+<p>We can take this concept as far as we want, adding multiple lines of JavaScript inside these quote marks, with each line separated by a semicolon (;), sans line break. If your bookmarklet won’t need any updating later, this method of “all inclusiveness” will probably be fine. For this tutorial, we’ll be externalizing the JavaScript code and storing it in a .JS file, which we’ll host somewhere else.</p>
+
+<h1 style="margin-top: 1.575em">Generic Heading 2</h1>
+<br>
+<p>We can take this concept as far as we want, adding multiple lines of JavaScript inside these quote marks, with each line separated by a semicolon (;), sans line break. If your bookmarklet won’t need any updating later, this method of “all inclusiveness” will probably be fine. For this tutorial, we’ll be externalizing the JavaScript code and storing it in a .JS file, which we’ll host somewhere else.</p>
+</div>
+</body>
+</html>

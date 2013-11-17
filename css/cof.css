@@ -1,0 +1,3613 @@
+deals.details .deal-short-desc/*	EnterpriseMobileBanking.css
+	Table of Contents (Search "=Section Name" to jump sections)
+	01. Default HTML Styles
+	02. Links
+	03. Common Styles
+	04. Buttons
+	05. Page-Level Messages
+	06. Calendar Widget
+	07. Icon Lists
+	08. Contact Us Icons
+	09. Browse Products Icon
+	10. Masthead
+	11. Quick Nav
+	12. Slide-Out Menu
+	13. Footer 
+	14. Fonts
+	15. EULA
+	16. Home
+	17. Products
+	18. Branch/ATM Form
+	19. Bank Bill Pay
+	20. Common Carousel Styles
+	21. Deals
+	22. Rewards
+	23. Loading Spinner
+	24. Retina Display Image Support
+	25. Platform-Specific Styles
+	26. Custom Modal Dialogs
+----------------------------------------------------------------------------------------------------*/
+
+
+/* =Default HTML Styles
+----------------------------------------------------------------------------------------------------*/
+* {
+	-webkit-user-select: none;
+	-ms-user-select: none;
+    -moz-user-select: -moz-none;
+	-webkit-touch-callout: none;              
+	-webkit-tap-highlight-color: transparent;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	margin: 0;
+    padding: 0;
+    /*box-sizing: border-box;
+    -webkit-box-sizing: border-box;*/
+}
+abbr { speak:normal;}
+acronym {speak:normal;}
+
+body {
+	/* background: #dedede url(../images/bg.png) 0 0 repeat; */
+	background-color: #dedede;
+	color: #333;
+	height: 100%;
+	overflow: scroll;
+	font: normal 80%/1.35 Helvetica, Arial, sans-serif;
+	-webkit-text-size-adjust: none;
+	-ms-text-size-adjust : none; 
+}
+fieldset {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	width:100%;
+}
+#content {
+	/* height: 100%;
+	margin: 0 auto; */
+	width: 100%;
+	height: 100%;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 0; 
+}
+h1 {
+	font: normal 1.7em 'TradeGothic', 'Arial Narrow', Helvetica, Arial, sans-serif;
+	color: #005288;
+	margin: 10px 0 7px 16px;
+	float: left;
+	-moz-text-shadow: 0 1px #fff;
+	-webkit-text-shadow: 0 1px #fff;
+	text-shadow: 0 1px #fff;
+	/*white-space: nowrap;*/
+}
+h2 {
+    font-weight: bold;
+    font-size: 1.1em;
+    -moz-text-shadow: 0 1px #fff;
+    -webkit-text-shadow: 0 1px #fff;
+    text-shadow: 0 1px #fff;
+    padding: 4px 15px;
+    clear: both;
+}
+/* h2.results is for sub-headings on search results of atm pages */
+h2.results {
+	font-weight: normal;
+	font-size: 1em;
+	/* padding-top: 0;
+	float: left;
+	width: 72%; */
+}
+/* .container h2 is for sub-headings within content boxes */
+.container h2 {
+	font: normal 1.4em 'TradeGothic', 'Arial Narrow', Helvetica, Arial, sans-serif;
+	color: #333;
+	/* Jason 7.17.12 Adjusting padding and margin to prevent doubling */
+	padding: 8px 9px 0;
+	margin: 0 0 9px;
+}
+/* Jason 7.30.12 Adding for Browse Products H2s */
+.container .header-primary h2,
+.container .header-secondary h2,
+.container .header-360 h2 {
+	color: #fff;
+	padding: 9px 0 0 9px;
+	margin: 0 0 9px;
+	font: bold 1em Helvetica, Arial, sans-serif;
+	-moz-text-shadow: none;
+	-webkit-text-shadow: none;
+	text-shadow: none;
+}
+h3 {
+	font: normal 1.3em 'TradeGothic', 'Arial Narrow', Helvetica, Arial, sans-serif;
+	color: #333;
+	margin-bottom: 10px;
+}
+hr {
+	height: 1px;
+	background-color: #aaa;
+	border: 0;
+	margin: 0;
+}
+label {
+	font-weight: bold;
+	display: block; /* Added by Dan 5/21 for Card Pay Bill form. Need to make sure this doesn't blow up any other forms. */
+	/* Added by Jason 7.17.12 */
+	clear: left;
+}
+input, textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+}
+input {
+	width: 97.5%;
+	height: 32px;
+	border: 1px solid #246fc8;
+	padding: 0 4px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	color: #333;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: inset 0px 2px 3px #ccc;
+	-webkit-box-shadow: inset 0px 2px 3px #ccc;
+	box-shadow: inset 0px 2px 3px #ccc;
+	text-decoration: none;
+}
+select {
+	width: 100%;
+	height: 34px;
+	border: 1px solid #246fc8;
+	padding: 0 4px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	color: #333;
+}
+
+input[type="checkbox"] {
+	width: 43px;
+	float: left;
+	margin: 10px 0 20px;
+}
+/* Dan 6/6 - Ensures that the disabled attribute doesn't overwrite the styles of submit buttons */
+input[type="text"][disabled="disabled"],
+input[type="number"][disabled="disabled"],
+input[type="password"][disabled="disabled"] {
+	background: #eee;
+	color: #000;
+	border: 1px solid #aaa;
+	cursor: default;
+	opacity: 1;
+	display: inline-block;
+    -webkit-appearance: textarea; 
+}
+input[type="submit"],
+input[type="button"] {
+	cursor: pointer;
+}
+input[type="number"]::-webkit-outer-spin-button {
+	display: none;
+}
+/*
+#content.android .input, #content.android-web .input { 
+	-webkit-user-modify: read-write-plaintext-only;
+	-webkit-appearance: none;
+	position: relative;
+}
+*/
+#content.android select, #content.android-web select {
+	background: transparent url(../images/arrow_drop_down.png) 100% 50% no-repeat;
+}
+/* Dan 6/5 - Replaced "form" with ".container" */
+.container input:last-child {
+	margin-bottom: 0;
+}
+/* Added by Jason for accessibility violations 3/15/13 */
+::-webkit-input-placeholder {
+   color: #767676;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #767676;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #767676;  
+}
+
+:-ms-input-placeholder {  
+   color: #767676;  
+}
+strong {
+	font-weight: bold;
+}
+em {
+	font-style: italic;
+}
+table {
+	background-color: #fff;
+	border-collapse: collapse;
+	font-size: 12px;
+}
+.container table {
+	margin: 9px;
+}
+th,td {
+	vertical-align: top;
+	text-align: left;
+	padding: 5px;
+	border: 1px solid #aaa;
+}
+thead th {
+	font-weight: bold;
+}
+/* Jason added for service marks, trademarks, etc. 6.1.12 */
+/* Dan modified 6/5, increased font size and removed line height to keep leading consistent */
+sup {
+	font-size: 0.7em;
+	vertical-align: text-top;
+	line-height: normal;
+	/* padding-left: 0;
+	margin-left: 0; */
+}
+
+.offscreen {
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+
+/* =Links
+----------------------------------------------------------------------------------------------------*/
+a,
+a:visited,
+a:focus,
+a:hover,
+a:active {
+	text-decoration: none;
+	color: #333;
+}
+.container_cal a {
+	font-size: 1em;
+	display: block;
+	min-height: 27px;
+	overflow: auto;
+}
+.container a,
+.container a:visited,
+.container a:focus,
+.container a:hover,
+.container a:active {
+	font-size: 1em;
+	display: block;
+	min-height: 27px;
+	overflow: auto;
+	padding: 8px 9px 9px;
+}
+.container.review a,
+.container.review a:visited,
+.container.review a:focus,
+.container.review a:hover,
+.container.review a:active {
+	padding: 11px 9px 12px;
+	min-height: 17px;
+}
+.container a.forward,
+.container a.forward:visited,
+.container a.forward:focus,
+.container a.forward:hover,
+.container a.forward:active {
+	padding-right: 2%;
+	background: transparent url(../images/arrow.png) 98% 50% no-repeat;
+}
+.container_cal a {
+	font-size: 1em;
+	display: block;
+	min-height: 27px;
+	overflow: auto;
+}
+.container a.back,
+.container a.back:visited,
+.container a.back:focus,
+.container a.back:hover,
+.container a.back:active {
+	padding-left: 28px;
+	padding-right: 9px;
+	background: transparent url(../images/arrow_back.png) 9px 50% no-repeat;
+}
+.container a.highlight,
+.container a.highlight:visited,
+.container a.highlight:focus,
+.container a.highlight:hover,
+.container a.highlight:active {
+	color: #246fc8;
+}
+.container a:active {
+	background-color: #e9e9e9 !important;
+}
+.container li img {
+	padding: 0 9px; 
+}
+
+/* Jason added for 4.0 contact us social links 12.5.12 */
+.container li.twitter, .container li.facebook  {
+	width: 49%;
+	display: inline-block;
+	border-bottom: none;
+}
+
+.container li.twitter a, .container li.facebook a {
+	display: inline-block;
+}
+
+li.twitter {
+	border-right: #aaa 1px solid;
+}
+
+
+
+/* =Common Styles
+----------------------------------------------------------------------------------------------------*/
+#wrapper {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #dedede url(../images/bg.png) 0 0 repeat;
+    /* background-color: #fff; */
+    /*
+	transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0px,0,0);
+    -webkit-transition-duration: 0.25s;
+    -moz-transform: translate3d(0px,0,0);
+    -moz-transition-duration: 0.25s;
+    */    
+}
+#wrapper.in {
+    -moz-transition: -moz-transform 150ms linear;
+    -moz-transform: translateX(240px);
+    -webkit-transition: -webkit-transform 350ms linear;
+    -webkit-transform: translateX(240px);
+}
+#wrapper.out {
+    -moz-transition: -moz-transform 150ms linear;
+    -moz-transform: translateX(0px);
+	-webkit-transition: -webkit-transform 350ms linear;
+    -webkit-transform: translateX(0px);
+}
+body.menu-open #wrapper {
+	/*
+	transform: translate3d(240px,0,0);
+    -webkit-transform: translate3d(240px,0,0);
+    -webkit-perspective: 1000px;
+    -webkit-backface-visibility: hidden;    
+    -webkit-transform-style: preserve-3d;    
+    -webkit-transition-duration: 0.25s;
+	-moz-transform: translate3d(240px,0,0);
+	-moz-transition-duration: 0.25s;
+	*/
+}
+#scroller {
+	position: absolute;
+	background: #dedede url(../images/bg.png) 0 0 repeat;
+	top: 100px;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	opacity: 0;
+	/* z-index: 0;
+	top: 0;
+	overflow: auto;
+	-webkit-touch-callout: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	padding: 0;
+	text-align: left; */
+}
+#scrollerDiv {
+	/*position:relative;*/
+	width: 100%;
+}
+#scroller.page { 
+	opacity: 1;
+	margin-left: 0%;
+	margin-top: 0%;
+	margin-top: 0%;
+	margin-right: 0%;
+	-moz-transform: opacity 0.2s ease-out 0.1s;
+	-webkit-transform: opacity 0.2s ease-out 0.1s;
+	-o-transform: opacity 0.2s ease-out 0.1s;
+	/*-webkit-backface-visibility: hidden;*/
+}
+.overthrow #eulaScrollerContent,
+.overthrow #scroller,
+.overthrow  #sidemenu,
+.overthrow #sidemenu ul {
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+.container {
+	clear: both;
+	border: 1px solid #aaa;
+	margin: 0 6px 15px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #fff;
+	list-style-type: none;
+	-moz-box-shadow: 0px 1px 2px #999;
+	-webkit-box-shadow: 0px 1px 2px #999;
+	box-shadow: 0px 1px 2px #999;
+}
+.container.full {
+	margin: 0 0 15px;
+	border-right: 0;
+	border-left: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+/* First-child may have better cross-browser support. May have to change this back and handle messaging differently */
+/* .container li {
+	border-top: 1px solid #aaa;
+	list-style: none;
+	display: block;
+}
+.container li:first-child {
+	border-top: 0;
+} */
+.container li {
+	border-bottom: 1px solid #aaa;
+	clear: both;
+}
+.container li:last-child {
+	border-bottom-width: 0;
+}
+.container li ul li {
+	border: none;
+	list-style-type: disc;
+	list-style-position: outside;
+	margin-left: 15px;
+	padding-bottom: 3px;
+}
+.container li > div,
+.container li > p,
+.container li > form,
+.container li > ul {
+	padding: 8px 9px 9px;
+	overflow: hidden;
+	min-height: 27px; /* Added by Dan on 5/22, specifically for the card select amount screen */
+}
+/* Added by Jason on 7.17.12, to have top and bottom margins collapse to avoid double margins */
+.container li > p,
+.container li > ul {
+	padding: 0 9px;
+	margin: 8px 0 9px;
+	overflow: hidden;
+	min-height: 27px; 
+}
+/* Added by Dan on 6/5 to address vertical alignment on review and confirmation screens */
+.container.review li > div,
+.container.review li > p,
+.container.review li > form,
+.container.review li > ul {
+	padding: 11px 9px 12px;
+	min-height: 17px;
+}
+/* .no-container added by Dan on 7/31 for page content  */
+.no-container p, .no-container ul {
+	font-size: 0.9em;
+	color: #505050;
+	margin: 10px 16px;
+}
+.no-container a {
+	color: #505050;
+	text-decoration: underline;
+}
+.no-container ul li {
+	list-style-type: disc;
+	margin: 0 0 0 16px;
+	padding-bottom: 6px;
+}
+/* .no-container added by Jason on 8.1.12 for browse buttons */
+.no-container a.body-button {
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.5em;
+}
+/*
+.no-container .body-button {
+	margin-bottom: 5px;
+}
+*/
+.no-container.standard .body-button,
+.no-container.standard .body-button:visited,
+.no-container.standard .body-button:focus,
+.no-container.standard .body-button:hover {
+	float: right;
+	/* border: solid purple 2px; */
+	width: 45%;
+}
+.no-container.standard .cancel.body-button {
+	float: left;
+	width: 45%;
+}
+.hide-text {
+	text-indent: 500%; /* Change from 100% by Jason on 5/31, edge of text was showing on atm gps button*/
+	white-space: nowrap;
+	overflow: hidden !important;
+	height: 0; /* Dan - 8/1 - Added so we can have a hidden H1 on the home screen */
+	display: block;
+}
+.invisible-text{
+	opacity: 0;
+}
+div.info {
+	width: 30%;
+	color: #666;
+	float: right;
+	font-size: 0.95em;
+	margin: 18px 16px 0 0;
+	text-align: right;
+}
+a.info,
+a.info:visited,
+a.info:focus,
+a.info:hover,
+a.info:active {
+	background: transparent url(../images/icon_info.png) 98% 50% no-repeat;
+}
+a.info .data {
+	width: 59%;
+}
+a.questionicon,
+a.questionicon:visited,
+a.questionicon:focus,
+a.questionicon:hover,
+a.questionicon:active {
+	background: transparent url(../images/question-icon.png) 98% 50% no-repeat;
+}
+
+form a.info,
+form a.info:visited,
+form a.info:focus,
+form a.info:hover,
+form a.info:active {
+	/* background-position: 50%; */
+	/* width: 44px; */
+	/*height: 44px;*/
+	/*margin-top: -6px;*/
+	/*padding: 0;*/
+}
+/* Jason 7.3.12 Added to handle posting timeframes icon */
+form a.info.timeframes,
+form a.info.timeframes:visited,
+form a.info.timeframes:focus,
+form a.info.timeframes:hover,
+form a.info.timeframes:active {
+	display: block;
+	float: left;
+	background-position: 0 50%;
+	width: 65%;
+	height: 44px;
+	margin-bottom: 5px;
+	/* Jason Added width 7.17.12 For bank Pay bill date info icon 
+	width: 100%;*/
+}
+/* Jason 7.3.12 Added to handle text next to posting timeframes icon */
+form a.info.timeframes span {
+	margin-left: 30px;
+	vertical-align: -14px;
+}
+
+/* Jason 4.8.13 Added to handle posting timeframes icon in misc on calendar page*/
+#scrollerDiv > div.info.timeframes {
+width: 40%;
+float: right;
+}
+#scrollerDiv > div.info.timeframes a {
+padding:8px 0px 4px 0px;
+}
+#scrollerDiv > div.info.timeframes a span{
+opacity: 0;
+}
+
+.data-label {
+	font-weight: bold; /* Dan - Added font-weight. Any reason we wouldn't want all labels to be bold? */
+	float: left;
+	width: 62%;
+}
+#transactions .data-label {
+	width: 70%;
+}
+.clip-acct-name {
+	display: inline-block;
+	max-width: 67% !important;
+	overflow: hidden;
+	text-overflow: clip;
+	white-space: nowrap;
+}
+/* Jason adjusting this for Accessiblity Defect 4.1.13 */
+.short.data-label {
+	width: 30% !important;
+}
+.extrashort.data-label {
+	width: 20% !important;
+}
+.data,
+.data-list {
+	float: right;
+	text-align: right;
+	/* Jason adjusting this for defect 3.25.13 */
+	width: 30%;
+}
+.long.data {
+	width: 65% !important;
+}
+.extralong.data {
+	width: 75% !important;
+}
+.review .data-label {
+	width: 30%;
+	margin-right: 10px;
+}
+.review .data {
+	float: left;
+	text-align: left;	
+	width: 61%;
+}
+.read-only-label {
+	font-weight: bold;
+	display: block;
+}
+.read-only-data {
+	margin-bottom: 10px;
+    display: block;
+}
+.acct-name,
+.data-list .feature-label {
+	font-weight: bold;
+	color: #333;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: wrap;
+}
+#accountlist {
+	font-size: 1.1em;
+}
+/* Jason added to let long acct names on wrap on pend bank payments 9.11.12, and bank pend internal and ext transfers on 9.18.12 */
+#transactions .acct-name,
+body[page="www-bank-paybills-pendingpayments"] .acct-name, 
+body[page="www-bank-transfer-pendingtransfers"] .acct-name, 
+body[page="www-bank-transfer-pendingexttransfer"] .acct-name  
+{
+	white-space: normal;
+	font-size: 1em;
+	overflow: visible;
+}
+.acct-number {
+	font-weight: normal;
+}
+.acct-balance,
+.acct-activate {
+	font-size: 1.1em;
+	font-weight: bold;
+	line-height: inherit;
+	color: #005288;
+	padding-right: 15px;
+}
+.bank #accountdetails .acct-balance {
+	padding-right: 0;
+}
+/* Dan - 6/18. Add this class to ul.container to vertically center data on screens like account summary and pending payments. */
+.single-data li {
+	position: relative;
+}
+.single-data .acct-balance,
+.single-data .acct-activate {
+	position: absolute;
+	top: 50%;
+	right: 2%;
+	height: 18px;
+	margin-top: -9px;
+}
+
+.single-data .data.acct-activate input {
+	margin-right: 35px;
+	margin-top: -7px;
+	width: 38px;
+}
+.single-data .data.acct-activate a.info {
+	height: 26px;
+	margin-top: -11px;
+	position: absolute;
+	right: 0%;
+	top: -11%;
+	width: 26px;
+}
+/* Dan - Fix for card rewards as-of date; need to check if this causes side effects on bank account details */
+#accountdetails .data-label {
+	width: 55%;
+}
+/* Jimmy - Working with David to help enhance the payment activity page list items*/
+#payment-activity .data-label {
+	font-size: 1.075em;
+	font-weight: bold;
+}
+#payment-activity .acct-name {
+	font-weight: bold;
+	display: inline-block;
+	color: #333;
+	max-width: 67% !important;
+	overflow: hidden;
+	text-overflow: clip;
+	white-space: nowrap;
+}
+#payment-activity .post-date {
+	font-weight: normal;
+	font-size: .975em !important;
+}
+#accountdetails .data {
+	width: 37%;
+}
+.cards #accountdetails li > div {
+	padding-right: 2%;
+}
+.highlight {
+	color: #246fc8;
+}
+.phone {
+	white-space: nowrap;
+}
+.single-line {
+	line-height: 26px !important;
+}
+.icon-list-32 .single-line {
+	line-height: 32px !important;
+}
+.icon-list-50 .single-line {
+	line-height: 50px !important;
+}
+.icon-list-66 .single-line {
+	line-height: 66px !important;
+}
+.Credit, .credit {
+	color: #007c00;
+	float: right;
+	text-align: right;
+	font-weight: bold;
+	font-size: 1em;
+	width: 28%;
+}
+.Credit em, .Debit em, .debit em, .credit em  {
+	font-weight: bold;
+}
+#transactions .pending {
+	float: right; 
+	font-size: 86%;
+	padding: .25em 0; 
+	font-weight: bold;
+}
+#transactions .pending-Credit, .pending-credit {
+	color: #66ad66 !important;
+}
+#transactions .pending-Debit, .pending-debit {
+	color: #b56365 !important;
+}
+.cards .credit:before, .cards .Credit:before {
+	content: "(";
+	font-weight: bold;
+}
+.cards .credit:after, .cards .Credit:after {
+	content: ")";
+	font-weight: bold;
+}
+.Debit, .debit {
+	color: #a12830;
+	float: right;
+	text-align: right;
+	font-weight: bold;
+	font-size: 1em;
+	width: 28%;
+}
+.container .question {
+	font-weight: bold;
+	padding: 0;
+}
+.container a .question {
+	padding-right: 15px;
+}
+.acct-type {
+	color: #767676;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding-right: 15px;
+	/* Adjusted font-size from 100% to solve defect 15845 with As of date on Bank Acct Summary */
+	font-size: 88%;
+}
+.checkbox-label {
+	float: left;
+	line-height: 53px;
+}
+.dateicon {
+	background: transparent url(../images/icon_calendar.png) 97% 4px no-repeat;
+}
+input.date {
+	background: transparent url(../images/icon_calendar.png) 97% 4px no-repeat;
+	padding: 0 10% 0 4px;
+	width: 38%;
+}
+input.amount {
+	width: 42%;
+	margin-left: 4px;
+}
+.field-hint {
+	vertical-align: 4px;
+}
+.disabled {
+	opacity: 0.4; /* Dan 5/22 - Need to check browser support */
+	cursor: default !important;
+}
+.selected {
+	padding-right: 6%;
+	background: #E4EDFA url(../images/check.png) 98% 50% no-repeat;
+}
+/* Dan 6/19 - Keeps input field from jumping on the Select Amount screen */
+#selectAmountFrm .container li > div {
+	margin-right: 6%;
+}
+#selectAmountFrm .container li.selected > div {
+	margin-right: 0;
+}
+table.three-col th,
+table.three-col td {
+	width: 32%;
+}
+table.four-col th,
+table.four-col td {
+	width: 24%;
+}
+.container .header-primary *,
+.container .header-secondary *,
+.container .header-360 * {
+	color: #fff;
+}
+.container li.header-primary * {
+	-moz-text-shadow: 0 -1px #01111f;
+	-webkit-text-shadow: 0 -1px #01111f;
+	text-shadow: 0 -1px #01111f;
+}
+.container li.header-secondary * {
+	-moz-text-shadow: 0 -1px #333;
+	-webkit-text-shadow: 0 -1px #333;
+	text-shadow: 0 -1px #333;
+}
+.container li.header-360 * {
+	-moz-text-shadow: 0 -1px #c44900;
+	-webkit-text-shadow: 0 -1px #c44900;
+	text-shadow: 0 -1px #c44900;
+}
+/* Dan 6/11 - Make sure this doesn't break the posting timeframes table */
+li.header-primary,
+li.header-secondary,
+li.header-360 {
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	overflow: hidden;
+}
+.container.full li.header-primary,
+.container.full li.header-secondary,
+.container.full li.header-360 {
+	-moz-border-radius-topleft: 0;
+	-moz-border-radius-topright: 0;
+	-webkit-border-top-left-radius: 0;
+	-webkit-border-top-right-radius: 0;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+.container .header-primary {
+	background-color: #005288;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#024786), to(#01325e));
+	background-image: -webkit-linear-gradient(top, #024786, #01325e);
+	background-image: -moz-linear-gradient(top, #024786, #01325e);
+	/* background-image: -ms-linear-gradient(top, #024786, #01325e);
+	background-image: -o-linear-gradient(top, #024786, #01325e); */
+}
+.container .header-secondary {
+	background-color: #767676;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#767676), to(#555));
+	background-image: -webkit-linear-gradient(top, #767676, #555);
+	background-image: -moz-linear-gradient(top, #767676, #555);
+	/* background-image: -ms-linear-gradient(top, #767676, #555);
+	background-image: -o-linear-gradient(top, #767676, #555); */
+}
+.container .header-360 {
+	/* changed to 360 red by Jason 12.5.12 */
+	background-color: #b5121b;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#b5121b), to(#7b040b));
+	background-image: -webkit-linear-gradient(top, #b5121b, #7b040b);
+	background-image: -moz-linear-gradient(top, #b5121b, #7b040b);
+	/* background-image: -ms-linear-gradient(top, #f08100, #e84f00);
+	background-image: -o-linear-gradient(top, #f08100, #e84f00); */
+}
+
+.container .data-list ul li {
+	list-style-type: none;
+	margin-left: 0px;
+}
+
+li.header-primary > div,
+li.header-primary > p,
+li.header-secondary > div,
+li.header-secondary > p,
+li.header-360 > div,
+li.header-360 > p {
+	min-height: 100%;
+}
+#selectpayment input[type="number"] {
+	margin-bottom: 0;
+}
+#selectpayment .field-hint {
+	vertical-align: -1px;
+}
+#selectpayment label {
+	position: absolute;
+	left: 51%;
+	margin-top: 3px;
+}
+.center {
+	text-align: center;
+}
+#close-mask {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    height: 100%;
+    background-color: transparent;
+}
+.clearFix {
+	float: none;
+	clear: both;
+}
+
+/*Added for Card FFIEC Text inputs Jason April.16.13*/
+.fullwidth {
+width:100%;
+}
+
+/* =Buttons 
+----------------------------------------------------------------------------------------------------*/
+.body-button,
+.body-button[disabled="disabled"]:active,
+#dialog .body-button, .dialogButton
+ {
+	font: normal 1.7em 'TradeGothic', 'Arial Narrow', Helvetica, Arial, sans-serif;
+	color: #fff;
+	/* Dan - Make sure CSS gradients work in our supported browsers before deleting
+	background: #699e00 url(../images/btn_primary_bg.png) 0 0 repeat-x; */
+	-moz-text-shadow: 0 -1px #2e5f00;
+	-webkit-text-shadow: 0 -1px #2e5f00;
+	text-shadow: 0 -1px #2e5f00;
+	height: 44px;
+	margin: 0 6px 15px;
+	line-height: 40px;
+	border: 1px solid #49810c;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0px 1px 2px #888;
+	-webkit-box-shadow: 0px 1px 2px #888;
+	box-shadow: 0px 1px 2px #888;
+	-webkit-appearance: none;
+    background-size: 100% 44px;
+    display: block;
+    text-align: center;
+    background-color: #5c8c00;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#cbdea6), to(#3e6300), color-stop(0.04, #6ba100));
+	background-image: -webkit-linear-gradient(top, #cbdea6 2%, #6ba100 4%, #3e6300);
+	background-image: -moz-linear-gradient(top, #cbdea6 2%, #6ba100 4%, #3e6300);
+	/* background-image: -ms-linear-gradient(top, #cde2b7 2%, #71ad31 4%, #49810c);
+	background-image: -o-linear-gradient(top, #cde2b7 2%, #71ad31 4%, #49810c); */
+}
+.container .body-button,
+.container .body-button[disabled="disabled"]:active,
+/* Jason added class for cancel button needed in for worklight modals 12.20.12 */
+.dialogButton
+ {
+	width: 100%;
+	margin: 6px 0 0;
+	padding: 0;
+}
+/* Jason added class for cancel button needed in for worklight modals 12.20.12 */
+.cancel.body-button,
+#dialog .cancel.body-button,
+.dialogButton[tabindex='1'] {
+	border: 1px solid #666;
+	-moz-text-shadow: 0 -1px #333;
+	-webkit-text-shadow: 0 -1px #333;
+	text-shadow: 0 -1px #333;
+	-moz-box-shadow: 0px 1px 2px #888;
+	-webkit-box-shadow: 0px 1px 2px #888;
+	box-shadow: 0px 1px 2px #888;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ccc), to(#666), color-stop(0.04, #8d8d8d));
+	background-image: -webkit-linear-gradient(top, #ccc 2%, #8d8d8d 4%, #666);
+	background-image: -moz-linear-gradient(top, #ccc 2%, #8d8d8d 4%, #666);
+	/* background-image: -ms-linear-gradient(top, #ccc 2%, #8d8d8d 4%, #666);
+	background-image: -o-linear-gradient(top, #ccc 2%, #8d8d8d 4%, #666); */
+}
+input[type="submit"].body-button,
+input[type="button"].body-button,
+.container .body-button[disabled="disabled"]:active {
+	height: 44px;
+	/* width: 96.5%; */
+}
+.body-button:active,
+.container .body-button:active,
+.dialogButton:active  {
+	background-image: none;
+	background-color: #49810c !important;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: #fff;
+}
+.cancel.body-button:active,
+.container .cancel.body-button:active,
+.dialogButton[tabindex='1'] {
+	background-color: #666 !important;
+}
+
+/* Use for Deals like dislike button - Samrat Please dont remove */
+.secondary.body-button {
+                border: 1px solid #00294e;
+                -moz-text-shadow: 0 -1px #333;
+                -webkit-text-shadow: 0 -1px #333;
+                text-shadow: 0 -1px #333;
+                background-color: #003a6f;
+                background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#b9c9e3), to(#00294e), color-stop(0.04, #4369a6));
+                background-image: -webkit-linear-gradient(top, #b9c9e3 2%, #4369a6 4%, #00294e);
+                background-image: -moz-linear-gradient(top, #b9c9e3 2%, #4369a6 4%, #00294e);
+}
+.secondary.body-button:active,
+.container .secondary.body-button:active {
+	background-color: #00294e !important;
+}
+
+
+/* David added new class for "Utility" buttons (e.g. Edit Payments) 4.18.13 */
+.utility-btn {
+	/* background gradients */
+	background: #c14c4c;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#afafb0), to(#4e4f50), color-stop(0.04, #757677));
+	background-image: -webkit-linear-gradient(top, #afafb0 2%, #757677 4%, #4e4f50);
+	background-image: -moz-linear-gradient(top, #afafb0 2%, #757677 4%, #4e4f50);
+	
+	/* text shadow */
+	-moz-text-shadow: 0 -1px #474847;
+	-webkit-text-shadow: 0 -1px #474847;
+	text-shadow: 0 -1px #474847;
+	
+	/* border */
+	border-color: #474747;
+}
+.utility-btn:active {
+	background: none;
+	background: #454647 !important;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: #fff;
+}
+
+/* David added new class for destructive buttons (cancel payment) 4.18.13 */
+.destructive-btn {
+	/* background gradients */
+	background: #c14c4c;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e3bfbf), to(#8f0c0c), color-stop(0.04, #b04747));
+	background-image: -webkit-linear-gradient(top, #e3bfbf 2%, #b04747 4%, #8f0c0c);
+	background-image: -moz-linear-gradient(top, #e3bfbf 2%, #b04747 4%, #8f0c0c);
+	
+	/* text shadow */
+	-moz-text-shadow: 0 -1px #671811;
+	-webkit-text-shadow: 0 -1px #671811;
+	text-shadow: 0 -1px #671811;
+	
+	/* border */
+	border-color: #973400;
+}
+.destructive-btn:active {
+	background: none;
+	background: #850808 !important;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: #fff;
+}
+
+
+.body-button:visited, .body-button:focus, .body-button:hover, .utility-button:visited, .utility-button:focus, .utility-button:hover {
+	color: #fff;
+}
+#sidemenu .body-button {
+	width: 64px;
+	height: 32px;
+	font-size: 1.2em;
+	line-height: 32px;
+	-moz-box-shadow: 0px 1px 2px #111;
+	-webkit-box-shadow: 0px 1px 2px #111;
+	box-shadow: 0px 1px 2px #111;
+	margin: 10px 0 0 10px;
+}
+#sidemenu .body-button:active {
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.utility-button {
+	float: right;
+	border: 1px solid #666;
+	-moz-text-shadow: 0 -1px 1px #333;
+	-webkit-text-shadow: 0 -1px 1px #333;
+	text-shadow: 0 -1px 1px #333;
+	-moz-box-shadow: 0px 1px 2px #888;
+	-webkit-box-shadow: 0px 1px 2px #888;
+	box-shadow: 0px 1px 2px #888;
+	color: #fff;
+	font: normal 1.2em 'TradeGothic', 'Arial Narrow', Helvetica, Arial, sans-serif;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	padding: 5px 10px 7px;
+	position: relative;
+	top: 2px;
+	margin: 4px 6px 0 0;
+	background-color: #767676;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#bdbdbd), to(#666), color-stop(0.06, #8d8d8d));
+	background-image: -webkit-linear-gradient(top, #bdbdbd 3%, #8d8d8d 5%, #666);
+	background-image: -moz-linear-gradient(top, #bdbdbd 3%, #8d8d8d 5%, #666);
+	/* background-image: -ms-linear-gradient(top, #bdbdbd 3%, #8d8d8d 5%, #666);
+	background-image: -o-linear-gradient(top, #bdbdbd 3%, #8d8d8d 5%, #666); */
+}
+.utility-button:active {
+	background-image: none;
+	background-color: #666;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: #fff;
+}
+/* Jason added for Rewards Back Button Next to H1 5.31.12 */
+.back.utility-button {
+	float: left;
+	margin: 5px 0 0 6px;
+	top: 0;
+}
+/* Dan - Don't think this is needed; nothing is being overwritten.
+.back.utility-button:active {
+	background-image: none;
+	background-color: #555;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: #fff;
+} */
+#toggle,#toggleyesno {
+	/*background: #ccc url(../images/toggle_switch.png) no-repeat 0 0;*/
+	border: 1px solid #246fc8;
+	width: 93px;
+	height: 30px;
+	display: block;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;	
+	/*
+	display: block;
+	-o-transition: all 0.125s ease-in-out;
+	-webkit-transition: all 0.125s ease-in-out;
+	-moz-transition: all 0.125s ease-in-out;
+	-o-transform: translateX(0);
+	-moz-transform: translateX(0);
+	*/
+	float: left;
+	margin-top: 10px;
+	margin-bottom: 18px;
+	margin-left: 10px;
+	padding: 0;
+}
+/*
+#content.iphone #toggle,
+#content.ios-web #toggle {
+	display: block;
+	-o-transition: all 0.125s ease-in-out;
+	-webkit-transition: all 0.125s ease-in-out;
+	-moz-transition: all 0.125s ease-in-out;
+	-o-transform: translateX(0);
+	-moz-transform: translateX(0);	
+}
+
+
+*/
+#toggle.off {
+	/*background-position: -54px;*/
+	background: #ccc url(../images/toggle_switch.png) no-repeat -54px 0;
+}
+#toggle.on {
+	/*background-position: 0px;*/
+	background: #ccc url(../images/toggle_switch.png) no-repeat 0 0;
+}
+#toggleyesno.off {
+	/*background-position: -54px;*/
+	background: #ccc url(../images/toggle_switch_yes_no.png) no-repeat -54px 0;
+}
+#toggleyesno.on {
+	/*background-position: 0px;*/
+	background: #ccc url(../images/toggle_switch_yes_no.png) no-repeat 0 0;
+}
+
+/* Added CJS 4/8/13 for clear button -- TODO: check with design team to make sure 
+   I'm adhering to our design standards.  Styles modified from Matt Butterworth's POC
+ */
+ span.clear-text-box {
+ 	position: relative;
+}
+span.clear-text-box  span.clear-text-button {
+    position: absolute;
+    display: block;
+    top: 50%;
+    margin-top:-12px;
+    right: 6px;
+    width: 16px;
+    height: 16px;
+    background: url('../images/clear.png') center center no-repeat;
+    background-size: 16px 16px;
+    cursor: pointer;
+    z-index: 10;
+}
+span.clear-text-box  input {
+    padding-right: 16px;
+    width: 97%;
+    padding-right:0.5em;
+}
+
+/* Fix for button on FFIEC Security Question update flow to not appear to visibly 'click' when disabled */
+#set-questions-button[disabled='disabled']:active {
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#cbdea6), to(#3e6300), color-stop(0.04, #6ba100));
+	background-image: -webkit-linear-gradient(top, #cbdea6 2%, #6ba100 4%, #3e6300);
+	background-image: -moz-linear-gradient(top, #cbdea6 2%, #6ba100 4%, #3e6300);
+}
+
+/* =Page-Level Messages
+----------------------------------------------------------------------------------------------------*/
+.container li.success,
+.container li.warning,
+.container li.error,
+.container li.info {
+	border-width: 2px !important;
+	border-style: solid;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	font-weight: bold;
+	margin: -1px;
+}
+.container li.success {
+	border-color: #008200;
+}
+.container li.warning {
+	border-color: #fc0;
+}
+.container li.error {
+	border-color: #a12830;
+}
+.container li.info {
+	border-color: #005288;
+}
+.container li.success.first,
+.container li.warning.first,
+.container li.error.first,
+.container li.info.first {
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.container li.success.last,
+.container li.warning.last,
+.container li.error.last,
+.container li.info.last {
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+}
+.container li.success .icon,
+.container li.warning .icon,
+.container li.error .icon,
+.container li.info .icon {
+	background: transparent url(../images/icon_sprite.png) 0 0 no-repeat;
+	float: left; 
+	width: 29px;
+	height: 26px;
+}
+.container li.warning .icon {
+	background-position: -60px 0;
+}
+.container li.error .icon {
+	background-position: -90px 0;
+}
+.container li.info .icon {
+	background-position: -30px 0;
+}
+.container li.success p,
+.container li.warning p,
+.container li.error p,
+.container li.info p {
+	padding: 4px 0 0 36px;
+}
+
+/* =Calendar Widget
+----------------------------------------------------------------------------------------------------*/
+
+#calendarDiv {
+	border: 1px solid #aaa;
+	background-color: #fff;
+	position: absolute;
+	z-index: 999998 !important;
+	width: 94%;
+	left: 3%;
+	top: 60px;
+	padding: 6px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	-moz-box-shadow: 0px 4px 14px #333;
+	-webkit-box-shadow: 0px 4px 14px #333;
+	box-shadow: 0px 4px 14px #333;
+	border-radius: 6px;
+}
+
+#calendar .calendar-table-header {
+	/* z-index: 999998 !important; */
+	/* font-family: Arial, Verdana, sans-serif; */
+	/* font-size: 1em; */
+}
+#calendar .calendar-header {
+	font-size: 1.3em;
+	background-color: #005288;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#024786), to(#01325e));
+	background-image: -webkit-linear-gradient(top, #024786, #01325e);
+	background-image: -moz-linear-gradient(top, #024786, #01325e);
+	/* background-image: -ms-linear-gradient(top, #024786, #01325e);
+	background-image: -o-linear-gradient(top, #024786, #01325e); */
+	text-align: center; 
+    font-weight: bold;
+    text-align: center;
+}
+#calendar th {
+	padding: 2px;
+}
+#calendar .calendar-table {
+	/* z-index: 999998 !important; */
+	border-collapse: collapse;
+	width: 100%;
+	color: #333;
+	/* font-family: Arial, Verdana, sans-serif; */
+	font-size: 1.25em;
+	border: 1px solid transparent;
+}
+/* #calendar .calendar-table td {
+	font-weight: bold;
+} */
+#calendar .calendar-name-day {
+	padding: 5px 0;
+	/* color: #006; */
+	text-align: center;
+	/* Jason 8.6.12 adjusting font size for defect #15477 */
+	font-size: 0.8em;
+	font-weight: bold;
+	height: 0;
+	border: 0;
+}
+#calendar .calendar-day {
+	border: 1px solid #bbb;
+	/* background-color: #eee; */
+	/* color: #006; */
+	/* font-size: 1.1em; */
+	/* Jason 8.6.12 adjusting calendar day height for defect #15477 */
+	padding: 6px 4px;
+	text-align: center;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+#calendar .button {
+	padding: 10px 15px;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+#calendar .exit {
+	border: 1px solid #999;
+	border-bottom: none;
+	background-color: #fff;
+	position: absolute;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	top: -41px;
+	right: 6.5%;
+	width: 44px !important;
+	height: 40px !important;
+	z-index: 999999 !important;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+#calendar .button.left {
+	float: left;
+	padding-right: 18px;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+#calendar .button.right {
+	float: right;
+	padding-left: 18px;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+#calendar #month {
+line-height: 40px;
+color: #fff;
+/* Jason Adjusted for accessibility calendar 4.1.13 */
+font-size: 1.3em;
+-moz-text-shadow: 0 -1px 1px #000;
+-webkit-text-shadow: 0 -1px 1px #000;
+text-shadow: 0 -1px 1px #000;
+/* text-shadow: 0px 1px 0px rgba(204, 102, 255, .5); */
+}
+#calendar .close {
+	background-image: url(../images/calendar_arrows.png);
+	background-repeat: no-repeat;
+	width: 20px;
+	height: 20px;
+}
+#calendar .close.center {
+	position: absolute;
+	left: 12px;
+	top: 10px;
+	background-position: 0 -20px;
+}
+#calendar .arrow {
+	float: left;
+	background-image: url(../images/calendar_arrows.png);
+	background-repeat: no-repeat;
+	width: 10px;
+	height: 20px;
+}
+#calendar .arrow.left {
+	background-position: 0 0;
+}
+#calendar .arrow.right {
+	background-position: -10px 0;
+}
+#calendar .today {
+	border: 1px solid #bbb;
+	background-color: #fff;
+	font-weight: bold;
+	color: #005288;
+}
+#calendar .selected {
+	border: 1px solid #bbb;
+	color: #fff;
+	font-weight: bold;
+	/* text-shadow: 0px -1px 0px rgba(204, 102, 255, .5); */
+	-moz-text-shadow: 0 -1px 1px #000;
+	-webkit-text-shadow: 0 -1px 1px #000;
+	text-shadow: 0 -1px 1px #000;
+	background-color: #005288;
+	background-image: none;
+	/* background-image: linear-gradient(bottom, #f60 50%, #fd7c27 50%);
+	background-image: -moz-linear-gradient(bottom, #f60 50%, #fd7c27 50%);
+	background-image: -webkit-linear-gradient(bottom, #f60 50%, #fd7c27 50%);
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(50%,#f60), color-stop(50%,#fd7c27)); */
+}
+/* #calendar .nonBusinessDay {
+	border: 1px solid #bbb;
+	background-color: #eee;
+} */
+#calendar .disabled {
+	/* opacity: 0.4; */
+	background-color: #eee;
+	color: #999;
+	opacity: 1;
+}
+#calendar .clear {
+	border: 0;
+	background-color: transparent;
+	opacity: 0;
+	outline: none;
+}
+/* #calendar input {
+	width: 200px;
+	height: 24px;
+	border: 1px solid #999;
+	border-radius: 5px;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #666;
+	padding: 2px;
+	font-size: 12pt;
+	margin-bottom: 10px;
+} */
+
+/* =Icon Lists - Added by Dan, 6/11
+----------------------------------------------------------------------------------------------------*/
+.icon-list-24 .icon {
+	width: 24px;
+	height: 24px;
+	float: left;
+	margin: 2px 8px 0 0;
+}
+.icon-list-32 .icon {
+	width: 32px;
+	height: 32px;
+	float: left;
+	margin-right: 8px;
+}
+/* Added by Jimmy Cox for mobile 4.1 payment activity icons 1.11.13*/
+.icon-list-19 .icon {
+	width: 19px;
+	height: 19px;
+	float: left;
+	margin: 8px 12px 0 5px;
+}
+/* Changed by Jason for mobile 4.0 web home 12.7.12*/
+.icon-list-50 .icon {
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin-right: 15px;
+}
+.icon-list-66 .icon {
+	width: 66px;
+	height: 66px;
+	float: left;
+	margin-right: 8px;
+}
+
+/*
+#avoalign	{
+	float: right;
+	border: 0;
+	background: transparent;
+}
+
+#avoalign td	{
+	border: 0;
+	padding:0;
+}
+
+#avoalign	{
+	float: right;
+	border: 0;
+	background: transparent;
+}
+#avoalign td	{
+	border: 0;
+	padding:0;
+}
+.avoTextAlign	{
+	display: inline-block;
+	margin-top: 7px;
+}
+*/
+
+.avoTextAlign	{
+	vertical-align: 10%;
+}
+
+.avo-btn {
+	display: inline-block;
+	margin-top: 2px;
+}
+
+#trxn-menu-icon	{
+	display: inline;
+	/* padding: 1.0em .575em .1075em; */
+	padding: 1.0em .75em .1075em;
+	margin-left: 10px;
+	margin-right: -10px;
+	margin-top: 2px;
+	box-shadow: inset 0 1px #ffffff, 0 .0625em .05em #999;
+	border: 1px solid #909090;
+	border-radius: 4px;
+	
+	background-color: #e8e8e8;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#d1d1d1));
+	background-image: -webkit-linear-gradient(top, #fafafa, #d1d1d1);
+	background-image: -moz-linear-gradient(top, #fafafa, #d1d1d1);
+	background-image: -ms-linear-gradient(top, #fafafa, #d1d1d1);
+	background-image: -o-linear-gradient(top, #fafafa, #d1d1d1);
+}
+#trxn-menu-icon:before 	{ 	
+	content: url('../images/trxn-menu-icon.png'); 
+}
+
+/* =Contact Us Icons - Added by Dan, 6/11
+----------------------------------------------------------------------------------------------------*/
+.icon-list-32.contact .phone {
+	background: transparent url(../images/contact_icon_sprite.png) 0 -6px no-repeat;
+}
+.icon-list-32.contact .email {
+	background: transparent url(../images/contact_icon_sprite.png) 0 -94px no-repeat;
+}
+
+/* Jason added .icon to class for more specificity to handle 4.0 social split layout. 12.5.12 */
+.icon-list-32.contact .icon.facebook {
+	background: transparent url(../images/contact_icon_sprite.png) 0 -138px no-repeat;
+}
+.icon-list-32.contact .icon.twitter {
+	background: transparent url(../images/contact_icon_sprite.png) 0 -182px no-repeat;
+}
+
+/* =Browse Products Icon - Added by Jason, 8.1.12
+----------------------------------------------------------------------------------------------------*/
+.product-detail .icon {
+	height: 42px;
+	width: 100px;
+	float: left;
+	clear: left;
+	margin: 10px 0 10px 8px;
+	background: transparent url(../images/logo_caponebank.png) no-repeat;	
+}
+.product-detail p {
+ 	clear: left;
+}
+.container li.product-detail ul li {
+	list-style-type: none;
+}
+
+/* =Payment Activity Icon - Added by Jimmy 1.11.13
+----------------------------------------------------------------------------------------------------*/
+.icon-list-19 .icon, .icon-list-19 .icon.Scheduled,
+.icon-list-19 .icon.scheduled {
+	background: transparent url(../images/payment-activity-sprite19.png) 0 0 no-repeat;
+}
+.icon-list-19 .icon.Completed,  .icon-list-19 .icon.completed{
+	background: transparent url(../images/payment-activity-sprite19.png) -21px 0 no-repeat;
+}
+.icon-list-19 .icon.Canceled,  .icon-list-19 .icon.canceled{
+	background: transparent url(../images/payment-activity-sprite19.png) -43px 0 no-repeat;
+}
+.icon-list-19 .icon.autopay-large {
+	background: transparent url(../images/automatic-icon.png) no-repeat;
+	margin-top:5px;
+}
+#autopayment-icon	{
+	background: transparent url(../images/automatic-icon.png) no-repeat;
+	background-size: 14px 14px;
+	margin:2px 0 0;
+	height:14px;
+}
+#details-autopay-icon {
+	background-image:url(../images/automatic-icon.png);
+	background-repeat:no-repeat;
+	width:19px;
+	height:17px;
+	background-size: 19px 17px;
+	display:inline-block;
+	margin-left: 10px;
+	vertical-align: -20%;
+}
+
+
+/* =Masthead
+----------------------------------------------------------------------------------------------------*/
+.masthead,
+#eulaheader #logo {
+	background: transparent url(../images/logo_capitalone.png) 16px 6px no-repeat;
+	height: 44px;
+	display: block;
+	border-bottom: 1px solid #033865;
+}
+/* Dan updated 7/10; put the top border on the quick nav list items instead of the header element */
+/* header {
+	border-top: 1px solid #2268a1;
+}
+.masthead[style*="display: none;"] + header,
+.masthead[style*="display:none;"] + header {
+	border-top-width: 0;
+} */
+
+/* =Quick Nav
+----------------------------------------------------------------------------------------------------*/
+/* Added by Vishal to remove background from wrapper and set height to 100%. Combines both Header and Masthead in one div #quicknav. */
+#quicknav,
+#eula #eulaheader {
+	border-top: 2px solid #b5121b;
+	background-color: #005288;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0064a5), to(#0e3466));
+	background-image: -webkit-linear-gradient(top, #0064a5, #0e3466);
+	background-image: -moz-linear-gradient(top, #0064a5, #0e3466);
+	/* background-image: -ms-linear-gradient(top, #0064a5, #0e3466);
+	background-image: -o-linear-gradient(top, #0064a5, #0e3466); */
+	-moz-box-shadow: 1px 1px 2px #888;
+	-webkit-box-shadow: 1px 1px 2px #888;
+	box-shadow: 1px 1px 2px #888;
+}
+#quicknav {
+	z-index: 3;
+	position: absolute;
+	width: 100%; 
+}
+header {
+	width: 100%;
+	height: 54px;
+	font-weight: bold;
+	display: block;
+	overflow: hidden;
+	z-index: 1;
+	border-bottom: 1px solid #001f3f;
+}
+header nav ul {
+	width: 100%;
+	float: left;
+}
+header ul li {
+	display: block;
+	width: 25%;
+	height: 54px;
+	list-style: none;
+	text-align: center;
+	float: left;
+	border-top: 1px solid #2268a1;
+}
+header ul .highlight {
+	z-index: 0;
+	background-color: #033865;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#064a84), to(#002140));
+	background-image: -webkit-linear-gradient(top, #064a84, #002140);
+	background-image: -moz-linear-gradient(top, #064a84, #002140);
+	/* background-image: -ms-linear-gradient(top, #064a84, #002140);
+	background-image: -o-linear-gradient(top, #064a84, #002140); */
+	-moz-box-shadow: inset 0 -2px 4px #002140;
+	-webkit-box-shadow: inset 0 -2px 4px #002140;
+	box-shadow: inset 0 -2px 4px #002140;
+	border-top: 1px solid #004471;
+}
+header ul li a,
+header ul li a:visited,
+header ul li a:focus,
+header ul li a:hover,
+header ul li a:active {
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 0.85em;
+	color: #fff;
+	-moz-text-shadow: 0 -1px 1px #000;
+	-webkit-text-shadow: 0 -1px 1px #000;
+	text-shadow: 0 -1px 1px #000;
+	background: transparent url(../images/quick_nav_sprite.png) 50% 0 no-repeat;
+	line-height: 84px;
+	-webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
+}
+header ul li a:active {
+	background-color: #005288;
+}
+/* Quick Nav upper left button styles */
+header li.menu a,
+header li.menu a:visited,
+header li.menu a:focus,
+header li.menu a:hover,
+header li.menu a:active,
+/* Dan 6/5 - We don't have Cancel buttons in the quick nav anymore
+header li.cancel a,
+header li.cancel a:visited,
+header li.cancel a:focus,
+header li.cancel a:hover,
+header li.cancel a:active, */
+header li.back a,
+header li.back a:visited,
+header li.back a:focus,
+header li.back a:hover,
+header li.back a:active {
+	background-position: 50% -57px;
+	font: normal 1.2em 'TradeGothic', 'Arial Narrow', Helvetica, Arial, sans-serif;
+	line-height: 50px;
+}
+header li.www a,
+header li.www a:visited,
+header li.www a:focus,
+header li.www a:hover,
+header li.www a:active {
+	background-position: 50% -114px;
+	z-index: 999;
+}
+/* Dan asks, "Do we still need this?" Jason says "yes keep it" */
+/* Shows login icon */ 
+header li.login a,
+header li.login a:visited,
+header li.login a:focus,
+header li.login a:hover,
+header li.login a:active {
+	background-position: 50% -114px;
+	z-index: 999;
+}
+/* Shows products icon */
+header li.products a,
+header li.products a:visited,
+header li.products a:focus,
+header li.products a:hover,
+header li.products a:active {
+	background-position: 50% -170px;
+	z-index: 999;
+}
+/* Shows atm icon */
+header li.atm a,
+header li.atm a:visited,
+header li.atm a:focus,
+header li.atm a:hover,
+header li.atm a:active {
+	background-position: 50% -226px;
+	z-index: 999;
+}
+/* Shows contact icon */
+header li.contact a,
+header li.contact a:visited,
+header li.contact a:focus,
+header li.contact a:hover,
+header li.contact a:active {
+	background-position: 50% -282px;
+	z-index: 999;
+}
+.cards header li.accounts a,
+.cards header li.accounts a:visited,
+.cards header li.accounts a:focus,
+.cards header li.accounts a:hover,
+.cards header li.accounts a:active {
+	background-position: 50% -338px;
+	z-index: 999;
+}
+.bank header li.accounts a,
+.bank header li.accounts a:visited,
+.bank header li.accounts a:focus,
+.bank header li.accounts a:hover,
+.bank header li.accounts a:active {
+	background-position: 50% -506px;
+	z-index: 999;
+}
+header li.pay-bill a,
+header li.pay-bill a:visited,
+header li.pay-bill a:focus,
+header li.pay-bill a:hover,
+header li.pay-bill a:active,
+/* Talk to Bank Team to get rid of xtra classes */
+header li.paybills a,
+header li.paybills a:visited,
+header li.paybills a:focus,
+header li.paybills a:hover,
+header li.paybills a:active {
+	background-position: 50% -394px;
+	z-index: 999;
+}
+header li.deals a,
+header li.deals a:visited,
+header li.deals a:focus,
+header li.deals a:hover,
+header li.deals a:active {
+	background-position: 50% -450px;
+	z-index: 999;
+}
+header li.transfers a,
+header li.transfers a:visited,
+header li.transfers a:focus,
+header li.transfers a:hover,
+header li.transfers a:active, 
+/* Talk to Bank Team to get rid of xtra classes */
+header li.transfer a,
+header li.transfer a:visited,
+header li.transfer a:focus,
+header li.transfer a:hover,
+header li.transfer a:active {
+	background-position: 50% -562px;
+	z-index: 999;
+}
+
+/* =Slide-Out Menu
+----------------------------------------------------------------------------------------------------*/
+#sidemenu {
+	position: absolute;
+	z-index: 0;
+    width: 240px;
+	height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+	overflow: hidden;
+	/*margin-left: -75%;
+	-moz-transition: all .05s ease-in 0s;
+	-webkit-transition: all .05s ease-in 0s;
+	-moz-box-shadow: inset -4px 0px 6px #222;
+	-webkit-box-shadow: inset -4px 0px 6px #222;*/
+/* Jason Changed for mobile 4.0 slide menu 12.11.12 */
+	background-color: /* #333 */ #272727;
+	-moz-box-shadow: inset -4px 0px 6px #222;
+	-webkit-box-shadow: inset -4px 0px 6px #222;
+	box-shadow: inset -4px 0px 6px #222;
+}
+#sidemenu ul {
+	width: 100%;
+	-webkit-transition: 0ms;
+	-webkit-transform-origin: 0px 0px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#sidemenu ul li {
+	display: block;
+}
+#sidemenu .logoutlist {
+	height: 55px;
+	border: 1px solid #222;
+	border-top-color: #333;
+	/* background: url(../images/slide_out_sprite.png) 100% -88px no-repeat; */
+}
+#sidemenu .buttonheader {
+	display: block;
+	width: auto;
+	height: 30px;
+	line-height: 30px;
+	color: #a8a8a8;
+	font-size: 0.95em;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-overflow: ellipsis;
+	text-indent: 10px;
+	background-color: #1f1f1f;
+}
+#sidemenu .button {
+	text-indent: 40px;
+	background: transparent url(../images/slide_out_sprite.png) 0 0 repeat-x;
+}
+#sidemenu .button a {
+	width: 100%;
+	height: 42px;
+	color: #fff;
+	/* Jason Changed for mobile 4.0 slide menu 12.11.12 */
+	border-top: 1px solid #2C3442;
+	border-bottom: 1px solid #1c222d;
+	font: normal 1.4em/40px 'TradeGothic', 'Arial Narrow', Helvetica, Arial, sans-serif;
+	display: block;
+	-moz-text-shadow: 0px -1px #000;
+	-webkit-text-shadow: 0px -1px #000;
+	text-shadow: 0px -1px #000;
+}
+#sidemenu #www-cards-accounts a {
+	background: url(../images/slide_out_sprite.png) 1px -132px no-repeat,
+				url(../images/slide_out_sprite.png) 100% -44px no-repeat;
+}
+#sidemenu #www-bank-accounts a {
+	background: url(../images/slide_out_sprite.png) 1px -176px no-repeat,
+				url(../images/slide_out_sprite.png) 100% -44px no-repeat;
+}
+#sidemenu #www-cards-rewards a {
+	background: url(../images/slide_out_sprite.png) 1px -220px no-repeat,
+				url(../images/slide_out_sprite.png) 100% -44px no-repeat;
+}
+#sidemenu #www-cards-deals a {
+	background: url(../images/slide_out_sprite.png) 1px -264px no-repeat,
+				url(../images/slide_out_sprite.png) 100% -44px no-repeat;
+}
+#sidemenu #www-bank-paybills a,
+#sidemenu #www-cards-paybills-schedule a {
+	background: url(../images/slide_out_sprite.png) 1px -352px no-repeat,
+				url(../images/slide_out_sprite.png) 100% -44px no-repeat;
+}
+#sidemenu #www-bank-paybills-pendingpayments a,
+#sidemenu #www-cards-paybills-pending a {
+	background: url(../images/slide_out_sprite.png) 1px -396px no-repeat,
+				url(../images/slide_out_sprite.png) 100% -44px no-repeat;
+}
+#sidemenu #www-bank-transfer a {
+	background: url(../images/slide_out_sprite.png) 1px -440px no-repeat,
+				url(../images/slide_out_sprite.png) 100% -44px no-repeat;
+}
+#sidemenu #www-bank-transfer-pendingtransfers a {
+	background: url(../images/slide_out_sprite.png) 1px -484px no-repeat,
+				url(../images/slide_out_sprite.png) 100% -44px no-repeat;
+}
+#sidemenu #www-cards-login a {
+	background: url(../images/slide_out_sprite.png) 1px -132px no-repeat,
+				url(../images/slide_out_sprite.png) 100% -88px no-repeat;
+}
+#sidemenu #www-bank-login a {
+	background: url(../images/slide_out_sprite.png) 1px -308px no-repeat,
+				url(../images/slide_out_sprite.png) 100% -88px no-repeat;
+}
+#sidemenu #www-products a {
+	background: url(../images/slide_out_sprite.png) 1px -528px no-repeat,
+				url(../images/slide_out_sprite.png) 100% -44px no-repeat;
+}
+#sidemenu #www-atm a {
+	background: url(../images/slide_out_sprite.png) 1px -572px no-repeat,
+				url(../images/slide_out_sprite.png) 100% -44px no-repeat;
+}
+#sidemenu #www-contact a {
+	background: url(../images/slide_out_sprite.png) 1px -616px no-repeat,
+				url(../images/slide_out_sprite.png) 100% -44px no-repeat;
+}
+#sidemenu .www.faq a {
+	background: url(../images/slide_out_sprite.png) 1px -660px no-repeat,
+				url(../images/slide_out_sprite.png) 100% -44px no-repeat;
+}
+/* Added by Alison 3.25.13 for Settings section of Menu */
+#sidemenu #www-settings a {
+	background: url(../images/slide_out_sprite.png) 1px -757px no-repeat,
+				url(../images/slide_out_sprite.png) 100% -44px no-repeat;
+}
+#toggle.settings {
+	float: right;
+}
+/* Added by Jason 12.10.12 for 4.0 Mobile web slide out menus */
+#sidemenu #www-360-login a {
+	background: url(../images/slide_out_sprite.png) 1px -703px no-repeat,
+				url(../images/slide_out_sprite.png) 100% -88px no-repeat;
+}
+#sidemenu .button a:active {
+	background-color: #333 !important;
+}
+body.menu-open #sidemenu {
+	/*display: block;
+	opacity: 1;
+	margin-left: 0%;
+	margin-top: 0%;
+	margin-top: 0%;
+	margin-right: 0%;
+	-moz-transform: opacity 0.2s ease-out 0.1s;
+	-webkit-transform: opacity 0.2s ease-out 0.1s
+	-o-transform: opacity 0.2s ease-out 0.1s	
+	background: red;*/
+}
+
+/* =Footer
+----------------------------------------------------------------------------------------------------*/
+footer {
+	clear: both;
+	background-color: transparent;
+	color: #505050;
+	margin-top: 16px;
+	display: block;
+}
+footer ul {
+	margin: 0 6px 2px;
+	overflow: hidden;
+}
+footer ul li {
+	list-style-type: none;
+	font-size: 0.9em;
+	float: left;
+	display: inline-block;
+	border-left: 1px solid #505050;
+}
+footer ul li:first-child {
+	border-left: 0;
+}
+footer p {
+	clear: both;
+	font-size: 0.8em;
+	padding: 6px 15px;	
+}
+footer ul li a,
+footer ul li a:visited,
+footer ul li a:focus,
+footer ul li a:hover,
+footer ul li a:active {
+	font-weight: bold;
+	color: #505050;
+	padding: 9px;
+	text-decoration: underline;
+}
+footer ul li a.mobile-security {
+	background: transparent url(../images/icon_security_lock.png) 0% 50% no-repeat;
+	margin-left: 9px;
+	padding-left: 11px;
+}
+/* No footer on home page or branch/ATM results page */
+#content.iphone[page="www-index_app.html"] footer,
+#content.android[page="www-index_app.html"] footer,
+#content[page="www-atm-atmlocations"] footer,
+#content[page="www-atm-atmlocations"] footer,
+/* Hide mobile security on all pages */
+footer li.mobile-security-link,
+footer p.mobile-security-info,
+/* No footer on iPhone or Android authenticated Pages */
+.iphone.authenticated footer,
+.android.authenticated footer,
+/* No Full Website link on iPhone or Android apps */
+.iphone footer #fullWebsiteLink,
+.android footer #fullWebsiteLink {
+	display: none;
+}
+/* Show mobile security on login pages */
+#content[page="www-cards-login"] footer li.mobile-security-link,
+#content[page="www-cards-login"] footer p.mobile-security-info,
+#content[page="www-bank-login"] footer li.mobile-security-link,
+#content[page="www-bank-login"] footer p.mobile-security-info,
+#content[page="www-settings"] footer li.mobile-security-link,
+#content[page="www-settings"] footer p.mobile-security-info,
+#content[page*="www-cards-securityQuestions"] footer li.mobile-security-link,
+#content[page*="www-cards-securityQuestions"] footer p.mobile-security-info {
+	display: block;
+}
+/* Hide footer on iphone/android unauth auth pages to avoid flicker */
+#content.iphone[page="www-cards-accounts"] footer,
+#content.iphone[page="www-cards-rewards"] footer,
+#content.iphone[page="www-cards-deals"] footer,
+#content.iphone[page="www-bank-accounts"] footer {
+	display: none;
+}
+#content.android[page="www-cards-accounts"] footer,
+#content.android[page="www-cards-rewards"] footer,
+#content.android[page="www-cards-deals"] footer,
+#content.android[page="www-bank-accounts"] footer {
+	display: none;
+}
+
+/* Show mobile security link on account details page */
+#content[page="www-cards-accounts-details"] footer,
+#content[page="www-cards-accounts-details"] footer li.mobile-security-link {
+	display: block;
+}
+
+/* =Fonts
+----------------------------------------------------------------------------------------------------*/
+@font-face {
+    font-family: 'TradeGothic';
+    src: url('../fonts/tradegothiclt-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/tradegothiclt-bold-webfont.woff') format('woff'),
+         url('../fonts/tradegothiclt-bold-webfont.ttf') format('truetype'),
+         url('../fonts/tradegothiclt-bold-webfont.svg#TradeGothicLTBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Jason added this to fix service mark defect*/
+.brand sup {
+    font-size: 0.4em;
+    margin-left: 2px;
+} 
+.container .brand,
+.container .brand:visited,
+.container .brand:focus,
+.container .brand:hover,
+.container .brand:active {
+	color: #333;
+	font: normal 1.4em 'TradeGothic', 'Arial Narrow', Helvetica, Arial, sans-serif;
+}
+/* Jason Added for landing page styling 6.1.12 */
+.container .rewards.brand,
+.container .rewards.brand:visited,
+.container .rewards.brand:focus,
+.container .rewards.brand:hover,
+.container .rewards.brand:active {
+	font: normal 1.1em 'TradeGothic', 'Arial Narrow', Helvetica, Arial, sans-serif;
+}
+.normal {
+	font: normal 13px Helvetica, Arial, sans-serif; 
+}
+.bold {
+	font-weight: bold;
+}
+/* Dan - 7/29 - Merged with #sidemenu selector above
+#sidemenu {
+    position: absolute;
+    width: 240px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+}
+*/
+
+/* =EULA
+----------------------------------------------------------------------------------------------------*/
+#eula {
+	z-index: 9999;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #dedede url(../images/bg.png) 0 0 repeat;
+    /* background-color: #fff;
+	transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0px,0,0);
+    -webkit-transition-duration: 0.25s;
+    -moz-transform: translate3d(0px,0,0);
+    -moz-transition-duration: 0.25s;
+    */ 
+}
+#eula #eulaScroller {
+	position: absolute;
+	top: 90px;
+	bottom: 60px;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+}
+#eula #submitEulaFrm {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.android #eula #submitEulaFrm .body-button {
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+#eulaScrollerContent p {
+	margin: 10px; 
+}
+
+/* =Home
+----------------------------------------------------------------------------------------------------*/
+/* Adjusted By Jason for Mobile 4.0 12.7.12 */
+
+.home.icon-list-50 .icon, .home.icon-list-66 .icon {
+	background: transparent url(../images/home_sprite.png) 50% 0 no-repeat;
+}
+.home .icon.card {
+	background-position: 50% 1px;
+	display: table-cell;
+    vertical-align: middle;
+}
+.home .icon.bank {
+	background-position: 50% -150px;
+	display: table-cell;
+    vertical-align: middle;
+}
+.home .icon.ing {
+	background-position: 50% -100px;
+	display: table-cell;
+    vertical-align: middle;
+}
+.home .icon.products {
+	background-position: 50% -50px;
+}
+.home .icon.deals {
+	background-position: 50% -100px;
+}
+
+.no-container .get-app {
+	font-size: 0.9em;
+	color: #505050;
+	background: transparent url(../images/home_sprite.png) 0 -200px no-repeat;
+	margin: 0 9px 0 16px;
+	padding: 8px 9px 9px 16px;
+	display: block;
+}
+.home a .brand,
+.home a:visited .brand,
+.home a:focus .brand,
+.home a:hover .brand,
+.home a:active .brand {
+	font: normal 1.7em 'TradeGothic', 'Arial Narrow', Helvetica, Arial, sans-serif;
+	color: #005288;
+	margin: 10px 0 7px 0px;
+	-moz-text-shadow: 0 1px #fff;
+	-webkit-text-shadow: 0 1px #fff;
+	text-shadow: 0 1px #fff;
+}
+.home.full a .brand,
+.home.full a:visited .brand,
+.home.full a:focus .brand,
+.home.full a:hover .brand,
+.home.full a:active .brand {
+	 text-transform: uppercase;
+}
+h1.home {
+	margin-top: -5px;
+}
+.container.home.full li {
+	background-color: #fff;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#e8e8e8));
+	background-image: -webkit-linear-gradient(top, #fff, #e8e8e8);
+	background-image: -moz-linear-gradient(top, #fff, #e8e8e8);		
+	padding: 9px;	
+} 
+.container.home.full li a.forward {
+	display:table;
+}
+.container.home.full li a.forward div {
+	display: table-cell;
+    vertical-align: middle;  
+    width: 100%;
+    padding-right: 6px;
+}
+
+/* =Products Page
+----------------------------------------------------------------------------------------------------*/
+.container.products > li {
+	border-radius: 5px;
+}
+.container.products .primary,
+.container.products.expandable .primary.expandable-list-item > a,
+.container.products.expandable .primary.expandable-list-item > div {
+	background: #fff;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#e8e8e8));
+	background-image: -webkit-linear-gradient(top, #fff, #e8e8e8);
+	background-image: -moz-linear-gradient(top, #fff, #e8e8e8);
+	background-image: linear-gradient(top, #fff, #e8e8e8);
+}
+.container.products.expandable .primary:first-child,
+.container.products.expandable .primary:first-child > a,
+.container.products.expandable .primary:first-child > div {
+	border-radius: 5px 5px 0px 0px;
+}
+.container.products.expandable .primary:last-child,
+.container.products.expandable .primary:last-child > a,
+.container.products.expandable .primary:last-child > div {
+	border-radius: 0px 0px 5px 5px;
+}
+.container.products.expandable .primary > a,
+.container.products.expandable .primary > div {
+	padding: 17px 10px 18px;
+	position: relative;
+}
+.container.products.expandable .primary .icon.expand {
+	background: #aaa url(../images/expand-collapse@2x.png);
+	background-position-y: 0px;
+	background-size: cover;
+	border-radius: 10px;
+	box-shadow: 0 1px 0 #fff, inset 0 1px 2px #000;
+	height: 20px;
+	margin-top: -10px;
+	position: absolute;
+	right: 3%;
+	top: 50%;
+	width: 20px;
+}
+.container.products.expandable .primary.expanded .icon.expand {
+	background-position-y: -20px;
+}
+.container.products.expandable .secondary li {
+	border-bottom: 1px solid #aaa;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.container.products.expandable .secondary li > a {
+	min-height: 0;
+	padding: 12px 10px;
+}
+.container.products.expandable .secondary li:first-child {
+	border-top: 1px solid #aaa;
+}
+.container.products.expandable .secondary li:last-child {
+	border: none;
+}
+.container.products.expandable .secondary {
+	background: #fff;
+	height: 0;
+	margin: 0;
+	min-height: 0px !important;
+	overflow: hidden;
+	padding: 0;
+	-webkit-transition: all .5s ease;
+}
+.container.products.expandable .secondary.expanded {
+	height: 168px !important;
+}
+
+.products-accessibly-hide {
+	display: hidden;
+}
+
+/* =Branch/ATM Form
+----------------------------------------------------------------------------------------------------*/
+.iphone #search360btn, .android #search360btn {
+    display: none; 
+}
+#branch-atm-form #address {
+	width: 73%;
+	padding: 0 9px 0 0;
+	float: left;
+}
+#branch-atm-form #submitATMmap {
+	width: 21%;
+	float: right;
+	padding: 4px 0 0;
+	margin-top: 8px;
+}
+#branch-atm-form #submitATMmap span {
+	display: block;
+	background: transparent url(../images/icon_location.png) 50% 0 no-repeat;
+}
+#branch-atm-form #city {
+	width: 61%;
+	padding: 14px 9px 0 0;
+	float: left;
+}
+#branch-atm-form #state {
+	width: 34%;
+	padding: 14px 0 0;
+	float: right;
+}
+#branch-atm-form #or-divider {
+	clear: both;
+	float: left;
+	width: 61%;
+	font-weight: bold;
+	border-top: 1px solid #666;
+	color: #666;
+	text-align: center;
+	margin: 12px 0 -4px;
+}
+#branch-atm-form #or-divider span {
+	background-color: #fff;
+	display: block;
+	width: 20px;
+	padding: 2px;
+	margin: -11px auto 0;
+	text-transform: uppercase;
+}
+#branch-atm-form #zip {
+	clear: both;
+	width: 61%;
+	padding: 10px 9px 10px 0;
+}
+a.atm p,
+a.branch p {
+	background: transparent url(../images/icon_branch_atm.png) no-repeat 0 2px;
+	padding: 0 15px 0 38px;
+}
+a.branch p {
+	background-position: 0 -78px;
+}
+
+#content[page="www-atm-atmlocations"] #scrollerDiv.map {
+	height: 100% !important;
+	overflow: hidden;
+}
+#map_canvas {
+	width: 100%;
+	height: 100% !important;
+	border-top: 1px solid #aaa;
+}
+.container.full.map {
+	margin: 10px 0 0;
+	padding: 0;
+	border: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.container.full.map span {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: inline-block;
+	width: 94%;
+}
+.container .lobbyhours li {
+	list-style: none;
+	margin-left: 0;
+}
+
+#bank_getDirectionsBtn {
+	margin: 0 6px 15px;
+	width: 96.5%;
+	padding: 0;
+}
+
+/* =Bank Bill Pay
+----------------------------------------------------------------------------------------------------*/
+/* Jason 7.3.12 Added to handle Last Payment, Delivery Time, etc on Payees in Bank PayBill flow*/
+/* Dan updated 7/9 */
+.payee-info {
+	display: inline-block;
+	width: 100%;
+}
+.payee-info span {
+	margin-bottom: 5px;
+}
+.payee-info .data-label {
+	width: 88px;
+	margin-left: 20px;
+	clear: both;
+}
+.payee-info .data {
+	width: 60%;
+	margin-left: 5px;
+	float: left;
+	text-align: left;
+}
+
+/* =Common Carousel Styles
+----------------------------------------------------------------------------------------------------*/
+#welcomeSplash {
+	background: #dedede url(../images/bg.png) 0 0 repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 9999;
+	overflow: hidden;
+}
+#welcomeSplash .splashpage {
+	background-size: contain;
+}
+#slider {
+	position: relative;
+	z-index: 1;
+	float: left;
+	height: 100%;
+	-webkit-transform: translate3d(0,0,0);
+}
+.splashpage {
+	-webkit-box-sizing: border-box;
+	position: relative;
+	z-index: 2;
+	display: block;
+	float: left;
+	width: 320px;
+	-webkit-transform: translate3d(0,0,0);
+}
+#splashScrollerNavigation {
+	position: absolute;
+	bottom: 75px;
+	left: 50%;
+	margin-left: -30px;
+}
+.splashNav {
+	width: 10px;
+	height: 10px;
+	margin-right: 8px;
+	background-color: transparent;
+	float: left; 
+}
+.splashNav.active button {
+	background-color: #666;
+}
+.splashNav button{
+	width: 10px;
+	height: 10px;
+	margin-right: 8px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #aaa;
+	border-color: transparent;
+}
+.splashNav button:focus{
+	border-color: #000;
+}
+.splashNav button:hover{
+	cursor: pointer;
+}
+#welcomeSplashCloseBtn {
+	position: absolute;
+	bottom: 15px;
+	left: 2%;
+	width: 96%;
+	margin: 0;
+}
+
+/* =Deals
+----------------------------------------------------------------------------------------------------*/
+.deals.carousel #one {
+	background: transparent url(../images/deals_coaching_1@2x.png) 50% 50% no-repeat;
+}
+.deals.carousel #two {
+	background: transparent url(../images/deals_coaching_2@2x.png) 50% 50% no-repeat;
+}
+.deals.carousel #three {
+	background: transparent url(../images/deals_coaching_3@2x.png) 50% 50% no-repeat;
+}
+.deals.carousel #four {
+	background: transparent url(../images/deals_coaching_4@2x.png) 50% 50% no-repeat;
+}
+.deals .data-label {
+	width: auto;
+	white-space: normal;
+}
+.deals-header {
+	font-size: 0.85em;
+}
+.deals.icon-list-24 .icon {
+	background: transparent url(../images/deals_icon_sprite.png) 0 0 no-repeat;
+}
+.deals #dealhistory-link .icon {
+	background-position: -24px 0;
+}
+.deals #moreinfo-link .icon {
+	background-position: -48px 0;
+}
+.deals #switchcards-link .icon {
+	background-position: -72px 0;
+}
+.deals.icon-list-66 .icon {
+	background: #eee url(../images/deals_icon_sprite.png) 0 -25px no-repeat;
+	border: 1px solid #ccc;
+}
+.deals.icon-list-66 .icon span {
+	display: block;
+	width: 66px;
+	height: 66px;
+	background-size: contain !important;
+}
+.deal-info {
+	 float: left;
+	 width: 70%;
+}
+.deal-status {
+	background: transparent url(../images/deals_icon_sprite.png) -83px -24px no-repeat;
+	padding-left: 15px;
+	display: inline-block;
+	height: 13px;
+	font-size: 0.85em;
+	color: #008200;
+}
+.deals .redeemed .deal-status {
+	background-position: -83px -37px;
+	color: #333;
+}
+.deals .redeemed .deal-merchant,
+.deals .redeemed .deal-short-desc,
+.deals .redeemed .deal-type,
+.deals .redeemed .deal-exp {
+	color: #767676;
+}
+.deal-merchant {
+	font-size: 1.1em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: inline-block;
+	width: 94%;
+}
+.deal-short-desc {
+	display: inline-block;
+	width: 94%;
+}
+.deal-type {
+	font-size: 0.9em;
+}
+.deals .expiring {
+	color: #a12830;
+	font-weight: bold;
+}
+.deals .redeemed .expiring {
+	font-weight: normal;
+}
+.deals-history.current-year .header-primary {
+	text-align: center;
+}
+.deals-history.current-year .savings {
+	text-align: center;
+	color: #005288;
+	font-size: 36px;
+	line-height: normal;
+}
+.deals-history.monthly-savings h2 {
+	width: 50%;
+	float: left;
+}
+.deals-history.monthly-savings .balance-label {
+	width: 40%;
+	float: right;
+	text-align: right;
+	display: block;
+	padding: 7px 9px 0 0;
+}
+.deals-history .acct-balance {
+	padding-right: 0;
+	right: 9px;
+}
+
+.deals.details .deal-short-desc {
+	color: #005288;
+	font-size: 1.3em;
+	line-height: 1.2;
+}
+
+.deals.details .deal-short-desc-ext{
+	color: #005288;
+	font-size: 32px;
+	line-height: 1.2;
+}
+
+.deals.details #mrch-link {
+	padding: 14px 6% 15px 9px;
+	min-height: 0;
+}
+.deals.details .redeemed .deal-type,
+.deals.details .redeemed .deal-exp {
+	color: #333;
+}
+.deals-logo {
+	background: transparent url(../images/logo_buyq.png) 50% 100% no-repeat;
+	height: 36px;
+}
+
+/*added by Jason 3.15.13 for accessibility*/
+#dealContainer h2 {
+	padding: 0;
+	margin: 0;
+}
+/*.container .header-primary h2*/
+
+/* =REWARDS* Specific CSS only for Epsilon
+----------------------------------------------------------------------------------------------------*/
+.rewards.no-hassle-logo {
+	height: 29px;
+	width: 100px;
+	margin-right: 16px;
+	background: url(../images/icon_nohassle_rewards.png) right top no-repeat;
+	background-size: 78px 29px;
+	/* Added 7.18.12 for rewards hang on page */
+	width: 30%;
+	margin: 8px 16px 0 0;
+	float: right;
+}
+/*
+ul.history-list li.first div.gridView.gridHead .header-primary {
+	height: 34px;
+}
+*/
+/* Jason 6.25.12 This Manages Content One Mrkup within rewards on Acct Info Page */
+#details ul.container li:first-child p {
+	min-height: 0;
+}
+#details ul.container li:first-child hr, #details ul.container li:first-child p:empty, #details ul.container li:first-child span:empty, #details ul.container li:first-child string:empty {
+	display: none;
+}
+#details ul.container:first-child li:first-child p:first-child {
+	display: none;
+}
+
+/* =Loading Spinner
+----------------------------------------------------------------------------------------------------*/
+/* Backgrond for Calendar */
+div.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;   
+    z-index: 11000;
+    background: rgba(0,0,0,0.4); 
+  }
+/* Loading Spinner Background */  
+div.loading-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;   
+    z-index: 11000;
+    /*background: rgba(0,0,0,0.4);*/ 
+  }
+.loading-bg {
+	position: relative;
+	width: 180px;
+	height: 80px;
+	z-index: 11001;
+	margin: auto;
+	top: 9%;
+	background-color: rgba(0,0,0,0.85);
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 1px solid #222;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	font-size: 1em;
+	top: 50%;
+    margin: -40px auto auto;
+}
+.loading-bg #loading {
+	position: relative;
+	width: 60px;
+	height: 60px;
+	z-index: 11002;
+	margin: 10px;
+	float: left;
+	background: transparent url(../images/loading.png) 50% 50% no-repeat;
+	-moz-animation: load 1.2s linear 0 infinite;
+	-webkit-animation: load 1.2s linear 0 infinite;
+	animation: load 1.2s linear 0 infinite;
+}
+.loading-bg span {
+	display: block;
+	float: left;
+	line-height: 80px;
+	font-size: 1.15em;
+}
+.loading-message {
+	width: 250px;
+/*	position: relative; */
+	z-index: 11001;
+	margin: auto;
+	font-weight: bold;
+	text-align: center;
+	font-size: 1em;
+/*	top: 50%; */
+}
+.loading-message span {
+	color: #246fc8;
+	display: block;
+	line-height: 41px;
+	font-size: 1.15em;
+}
+@-moz-keyframes load {
+	0% {-moz-transform: rotate(0deg);}
+	100% {-moz-transform: rotate(360deg);}
+}
+@-webkit-keyframes load {
+	0% {-webkit-transform: rotate(0deg);}
+	100% {-webkit-transform: rotate(360deg);}
+}
+@keyframes load {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+}
+/* Jason 7.18.12 Added for potential in Hang On page spinner for rewards */
+.hang-on.loading-bg {
+	position: relative;
+	top: 0;
+	width: 80px;
+}
+
+/* =Retina Display Image Support
+----------------------------------------------------------------------------------------------------*/
+@media screen and (-webkit-min-device-pixel-ratio: 2),
+screen and (-webkit-min-device-pixel-ratio: 1.5),
+screen and (min--moz-device-pixel-ratio: 2),
+screen and (min--moz-device-pixel-ratio: 1.5) {
+    /* body {
+    	background-image: url(../images/bg@2x.png);
+		background-size: 40px 40px;
+    } */
+	header,
+	header ul li a,
+	header ul li a:visited,
+	header ul li a:focus,
+	header ul li a:hover,
+	header ul li a:active {
+		background-image: url(../images/quick_nav_sprite@2x.png);
+		background-size: 80px 672px;
+	}
+	/* Dan - Make sure CSS gradients work in our supported browsers before deleting
+	.body-button {
+		background-image: url(../images/btn_primary_bg@2x.png);
+		background-size: 100% 42px;
+	} */
+	.container a,
+	.container a:visited,
+	.container a:focus,
+	.container a:hover,
+	.container a:active {
+		background-image: none;
+	}
+	.container a.forward,
+	.container a.forward:visited,
+	.container a.forward:focus,
+	.container a.forward:hover,
+	.container a.forward:active {
+		background-image: url(../images/arrow@2x.png);
+		background-size: 9px 13px;
+	}
+	.container a.back,
+	.container a.back:visited,
+	.container a.back:focus,
+	.container a.back:hover,
+	.container a.back:active {
+		background-image: url(../images/arrow_back@2x.png);
+		background-size: 9px 13px;
+	}
+	.container li.success .icon,
+	.container li.warning .icon,
+	.container li.error .icon,
+	.container li.info .icon {
+		background-image: url(../images/icon_sprite@2x.png);
+		background-size: 120px 26px;
+	}
+	.masthead,
+	#eulaheader #logo {
+		background-image: url(../images/logo_capitalone@2x.png);
+		background-size: 94px 33px;
+	}
+	#wrapper,
+	#scroller,
+	#welcomeSplash,
+	#eula {
+    	background-image: url(../images/bg@2x.png);
+		background-size: 40px 40px;
+    }
+	a.atm p,
+	a.branch p {
+		background-image: url(../images/icon_branch_atm@2x.png);
+		background-size: 30px 110px;
+	}
+	#branch-atm-form #submitATMmap span {
+		background-image: url(../images/icon_location@2x.png);
+		background-size: 28px 29px;
+	}
+	#toggle {
+		/*background-image: url(../images/toggle_switch@2x.png);
+		background-size: 146px 30px; */
+	}
+	#toggle.off {
+		/*background-position: -54px;*/
+		background: #ccc url(../images/toggle_switch@2x.png) no-repeat -54px 0;
+		background-size: 146px 30px;
+	}
+	#toggle.on {
+		/*background-position: 0px;*/
+		background: #ccc url(../images/toggle_switch@2x.png) no-repeat 0 0;
+		background-size: 146px 30px;
+	}
+	#toggleyesno.off {
+		/*background-position: -54px;*/
+		background: #ccc url(../images/toggle_switch_yes_no@2x.png) no-repeat -54px 0;
+		background-size: 146px 30px;
+	}
+	#toggleyesno.on {
+		/*background-position: 0px;*/
+		background: #ccc url(../images/toggle_switch_yes_no@2x.png) no-repeat 0 0;
+		background-size: 146px 30px;
+	}
+	a.info,
+	a.info:visited,
+	a.info:focus,
+	a.info:hover,
+	a.info:active {
+		background-image: url(../images/icon_info@2x.png);
+		background-size: 26px;
+	}
+	a.questionicon,
+	a.questionicon:visited,
+	a.questionicon:focus,
+	a.questionicon:hover,
+	a.questionicon:active {
+		background-image: url(../images/question-icon@2x.png);
+		background-size: 26px;
+	}
+	/* Jason added to get 2x no hassle rewards logo to show on Epsilon Landing 6.1.12 */
+	.rewards.no-hassle-logo {
+		background-image: url(../images/icon_nohassle_rewards@2x.png);
+		background-size: 78px 29px;
+	}
+	.home.icon-list-50 .icon,
+	.no-container .get-app {
+		background-image: url(../images/home_sprite@2x.png);
+		background-size: 50px 227px;
+	}
+	.product-detail .icon {
+		background-image: url(../images/logo_caponebank@2x.png);
+		background-size: 100px 42px;
+	}	
+	.dateicon {
+		background-image: url(../images/icon_calendar@2x.png);
+		background-size: 25px 24px;
+	}
+	input.date {
+		background-image: url(../images/icon_calendar@2x.png);
+		background-size: 25px 24px;
+	}
+	.selected {
+		background-image: url(../images/check@2x.png);
+		background-size: 20px 17px;
+	}
+	#calendar .close {
+		background-image: url(../images/calendar_arrows@2x.png);
+		background-size: 20px 40px;
+	}
+	#calendar .arrow {
+		background-image: url(../images/calendar_arrows@2x.png);
+		background-size: 20px 40px;
+	}
+	footer ul li a.mobile-security {
+		background-image: url(../images/icon_security_lock@2x.png);
+		background-size: 7px 10px;
+	}
+	#sidemenu .button,
+	#sidemenu .button a {
+		background-image: url(../images/slide_out_sprite@2x.png), url(../images/slide_out_sprite@2x.png) !important;
+		background-size: 40px 748px, 40px 748px;
+	}
+	.icon-list-32.contact .icon {
+		background-image: url(../images/contact_icon_sprite@2x.png);
+		background-size: 32px 220px;
+	}
+	.icon-list-19 .icon {
+		background-image: url(../images/payment-activity-sprite38@2x.png) !important;
+		background-size: 56px 19px;
+	}
+	.icon-list-19 .icon.autopay-large {
+	background: transparent url(../images/automatic-icon@2x.png) no-repeat !important;
+	background-size: 19px;
+	}
+	#autopayment-icon	{
+	background-image: url(../images/automatic-icon@2x.png) !important;
+	}
+	#details-autopay-icon {
+	background-image:url(../images/automatic-icon@2x.png);
+	}
+	.deals.icon-list-24 .icon,
+	.deals.icon-list-66 .icon,
+	.deal-status {
+		background-image: url(../images/deals_icon_sprite@2x.png);
+		background-size: 96px 90px;
+	}
+	.loading-bg #loading {
+		background-image: url(../images/loading@2x.png);
+		background-size: 60px 60px;
+	}
+	.deals-logo {
+		background-image: url(../images/logo_buyq@2x.png);
+		background-size: 65px 30px;
+	}
+	#content.android select, #content.android-web select {
+		background-image: url(../images/arrow_drop_down@2x.png);
+		background-size: 25px 40px;
+	}
+	
+/*	#trxn-menu-icon { padding: .45em .575em 0em;} */
+	#trxn-menu-icon:before {
+		background-image: url(../images/trxn-menu-icon@2x.png);
+		background-repeat: no-repeat;
+		background-size: 20px 20px;
+		content: '';
+	  	display: inline-block;
+	  	height: 20px;
+	  	width: 20px;
+	}
+	
+/*	#trxn-menu-icon	{
+	display: inline;
+	padding: 1.0em .575em .1075em;
+	margin-left: 10px;
+	box-shadow: inset 0 1px #ffffff, 0 .0625em .05em #999;
+	border: 1px solid #909090;
+	border-radius: 4px;
+	
+	background-color: #e8e8e8;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#d1d1d1));
+	background-image: -webkit-linear-gradient(top, #fafafa, #d1d1d1);
+	background-image: -moz-linear-gradient(top, #fafafa, #d1d1d1);
+	background-image: -ms-linear-gradient(top, #fafafa, #d1d1d1);
+	background-image: -o-linear-gradient(top, #fafafa, #d1d1d1);
+	}
+	#trxn-menu-icon:before 	{ 	
+		content: url('../images/trxn-menu-icon@2x.png'); 
+	} */
+}
+
+/* =Platform-Specific Styles
+----------------------------------------------------------------------------------------------------*/
+/*
+Added by Vishal
+Need to remove what is not needed and merge in to top mobileweb.css
+*/
+.authenticated .masthead, .iphone .masthead, .android .masthead {
+	height: 0;
+	border-bottom: 0;
+}
+.authenticated header ul li, .iphone header ul li, .android header ul li  {
+	border-top: 0;
+}
+/*
+.authenticated header, .iphone header, .android header  {
+	border-top: 0px;
+}
+*/
+.authenticated #scroller, .iphone #scroller, .android #scroller {
+	top: 56px; 
+}
+.blackberry #wrapper,
+.blackberry #quicknav,
+.blackberry #scroller {
+	position: relative;
+}
+.blackberry #wrapper {
+	height: 100%;
+}
+.blackberry #scroller {
+	top: 0;
+}
+#content.android *,
+#content.android-web * {
+	text-shadow: none;
+	box-shadow: none;
+	-webkit-box-shadow: none; 
+}
+#content.iphone #scroller.page,
+#content.ios-web #scroller.page { 
+    -webkit-transform: translate3d(0px,0px,0);
+    -webkit-backface-visibility: hidden;
+}
+.clearFix {
+	float: none; clear: both;
+}
+/*
+Styles for CSS3 page animations
+Might be needed for future
+*/
+/*
+#scroller.left {
+	margin-top: 0%;
+	margin-left: -100%;	
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);	
+}
+#scroller.right {
+	margin-left: 100%;
+	margin-top: 0%;
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);	
+}
+#scroller.bottom {
+	margin-left: 0%; 
+	margin-top: 100%;
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);		
+}
+#scroller.top {
+	margin-left: 0%; 
+	margin-top: -100%;
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);		
+}
+#scroller.center {
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+}*/
+/* Stylesheet content from css/MobileWeb.css in folder mobilewebapp */
+/* this CSS file extends the application CSS file found under common.css */
+/*
+CSS styles for NO iscroll implementation. 
+*/
+/*
+#content {
+	height: auto;
+	overflow-y: scroll; 
+}
+#wrapper {
+    height: auto;
+}
+#scroller, #quicknav { 
+	position: relative;
+}
+#scroller {
+	top: 0px;
+}
+.authenticated #scroller {
+	top: 0px; 
+}
+*/
+/*
+IOS 5 Momentum Scrolling
+*/
+/*
+.ios5 #content {
+    height: 100%;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    overflow: hidden;
+    z-index: 1;
+}
+.ios5 #quicknav {
+	position: absolute;
+	top: 0;
+}
+.ios5 #scroller {
+	height: auto;
+	position: absolute;
+    top: 100px;
+    bottom: 0px;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    z-index: 1;    
+}
+.ios5 #pagePort { 
+	position:static;
+}
+.authenticated.ios5 #scroller {
+	position: absolute;
+	overflow: scroll;
+	top: 56px;
+	-webkit-overflow-scrolling: touch;
+}
+.ios5 #sidemenu {
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+.ios5 #sidemenu ul {
+	height: auto;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+*/
+
+/**
+David Odden 8/17/12
+for the new payment account flow in pay bills.
+* TODO: ADD CONTAINER ID
+*/
+#abatxt {
+	width: 78%;
+}
+
+#acctnumtxt {
+	margin-bottom: 10px; /* should be set through "input" */
+	width: 78%;
+}
+
+#reaccttxt {
+	width: 78%;
+}
+
+#abainfo {
+	float:right;
+	width: 36px;
+	margin-left: 5px;
+	/*Jason added margin-top to account for info icon position during accessibiliy audit 3.28.13*/
+/*	margin-top: -16px; */
+	padding:0px;
+	margin-top: -6px;
+}
+
+#abainfoimage {
+	margin:5% 5% 0px 5%;
+	padding:0px;
+}
+
+#primary { margin: 6px 0 0 4px;}
+#toggle,#toggleyesno { margin-bottom: 0; padding: 0;}
+p.switch-note {
+	clear: both;
+	width: 96%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+#toggle1, #toggleyesno {
+    border: 1px solid #246FC8;
+    border-radius: 5px 5px 5px 5px;
+    display: block;
+    float: left;
+    height: 30px;
+    margin-bottom: 18px;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 0;
+    width: 93px;
+}
+#toggle1.off {
+    background: url("../images/toggle_switch.png") no-repeat scroll -54px 0 #CCCCCC;
+}
+#toggle1.on {
+    background: url("../images/toggle_switch.png") no-repeat scroll 0 0 #CCCCCC;
+}
+#toggleyesno.off {
+    background: url("../images/toggle_switch_yes_no.png") no-repeat scroll -54px 0 #CCCCCC;
+}
+#toggleyesno.on {
+    background: url("../images/toggle_switch_yes_no.png") no-repeat scroll 0 0 #CCCCCC;
+}
+/**
+ * Nikhil Sharma - Mobile Servicing 8/28/2012
+ * 
+ * TODO: MOVE TO USE INHERITENCE AND DETECT PIXEL DENSITY
+ */ 
+/*
+.icon#autopayment-icon {
+	margin-top: 3px;
+	padding-right: 0;
+}
+*/
+#autopay_second_header {
+	width: 96%;
+	margin-left: 11px;
+	margin-bottom: 5px;
+}
+
+#autopay_fixed_txt {
+	font-weight: normal;
+	line-height: normal !important;
+	margin-top:0;
+}
+#date-info #due {
+	margin-left: 32px
+}
+#autopayoptiontxt	{
+	min-width:200px;
+	margin-left: 0;
+}
+.autopay_fixed_txt_container {
+	border-bottom-width: 0 !important;
+}
+#tcaccept	{
+	margin: 2px 0px 32px;
+	padding-left: 4px;
+	height: auto;
+}
+.container a.inline_highlight	{
+	display: inline;
+	color: #246fc8;
+}
+#timeframes	{
+	padding-left: 0px;
+}
+#termsandconditions	{
+	padding: 0px 4px 0px 4px;
+}
+
+.embedded-terms {
+	color: #666;
+	font-size: 0.95em;
+	margin: 7px 8px 8px 14px;
+}
+
+.container #autopay-terms-content ul li > p {
+	padding-left: 0;
+	overflow: initial;
+}
+.container li#autopay-terms-content p {
+	min-height: 0;
+}
+.container li#autopay-terms-content ul li {
+	padding: 0;
+}
+.container #autopay-terms-content ul table {
+	margin-left:0;
+}
+.container #autopay-terms-content ul table thead th {
+	font-weight: normal;
+}
+.no_padding	{
+	padding: 0px;
+}
+table.borderless th,
+table.borderless td	{
+	border: 0px;
+}
+/* table td.checkbox	{
+	width: 43px;
+} */
+
+.customcheckboxrow {
+	margin: 1em .25em;
+}
+	
+.customcheckboxrow p {
+	vertical-align: top;
+	display: inline-block;
+	/*Removed on purpose do not add back*/
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+/*	
+.customcheckboxrow input[type="checkbox"] {
+	display: none;
+}
+*/
+	
+	/* Inline-block Label */
+.customcheckboxrow input[type="checkbox"] + label {
+	display: inline-block;
+}
+
+.customcheckboxrow fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.customcheckboxrow input[type="checkbox"] + label span {
+	display: inline-block;
+	position: relative;
+	width:15px;
+	height:15px;
+	border: 1px solid #246fc8;
+	border-radius: 4px;
+	margin: 0 1.4em;
+
+	background-color: #8a8a8a;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f8f8f8), to(#cfcfcf));
+	background-image: -webkit-linear-gradient(top, #f8f8f8, #cfcfcf); 
+	background-image: -moz-linear-gradient(top, #f8f8f8, #cfcfcf);
+	background-image: -ms-linear-gradient(top, #f8f8f8, #cfcfcf);
+	background-image: -o-linear-gradient(top, #f8f8f8, #cfcfcf);
+}
+
+.customcheckboxrow input[type="checkbox"]:checked + label span:after {
+/*Add a block-level blank space*/
+  content:"\00a0";
+  display:block;
+/*Make a small rectangle*/
+  width: 5px;
+  height: 12px;
+/*Add a border on the bottom and right, creating that 'L' */
+  border: solid #005288;
+  border-width: 0 3px 3px 0;
+/*Position it on top of the circle*/
+  position:absolute;
+  top: -.375em;
+  left: .525em;
+/*Make it a check*/
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+
+#autopayTCCheckBoxContainer {
+	padding: 0;
+	display: table-row;
+}
+#checkBox_clickableBox {
+	display: table-cell;
+	padding: 0;
+	max-width: 19%;
+	vertical-align: middle;
+}
+#checkbox_text {
+	display: table-cell;
+	max-width: 81%;
+	padding: 0;
+}
+
+/* Samrat added for Search Captial One 360 button to hide */
+
+#content.android #branchAtmthreeSixty, #content.iphone #branchAtmthreeSixty, .authenticated ul#branchAtmthreeSixty {
+	display:none;
+}
+.bank #contactinfoThreeSixty, .cards #contactinfoThreeSixty{
+	display:none;	
+}
+	
+/* Fix for Production APP google maps display 01/10/2013 */
+#content.android[page="www-atm-atmlocations"], #content.android[page="www-atm-atmlocations"] #scroller, #content.iphone[page="www-atm-atmlocations"], #content.iphone[page="www-atm-atmlocations"] #scroller {
+	height: 100%;
+}
+.greyedout {
+	color: #acacac !important;
+}
+.opacity-65 {
+	-webkit-opacity: 0.65;
+	-moz-opacity: 0.65;
+	opacity: 0.65;
+}
+
+#payActivity-autopay-text	{
+	margin-top: 5px;
+}
+
+#payment-details h2 {
+	display:inline-block;
+	padding-left:1px;
+}
+#payment-details .container:first-child{
+	margin-bottom:5px;
+}
+
+/* For accesbility */
+.hidden {
+position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
+}
+
+.hidden-text {
+ 	font-size: 0.1em;
+	position: absolute;
+	white-space: nowrap;
+	opacity: 0.0;
+	color: white;
+	/*Removed on purpose do not add back*/
+}
+
+.customcheckboxrow input[type="checkbox"] {
+	width: 1px;
+	position: absolute;
+	opacity: 0.0;
+	border: none;
+	background: none;
+}
+
+abbr { speak:normal;}
+acronym {speak:normal;}
+[aria-hidden="true"] { visibility: hidden; }
+
+/* Accessibity related changes */
+#sidemenu { display: none; }
+.authenticated #sidemenu { display: block; }
+#content #sidemenu ul li { display: none; }
+
+#content.menu-open #wrapper { left: 240px; width: 100%; }
+#content.menu-open #sidemenu ul li { display: block; }
+
+#content.menu-open #close-mask { display: block; }
+#sidemenu .logoutlist { display: none; }
+.authenticated #sidemenu .logoutlist { display: block; }
+
+
+
+/* ===================================================
+DATA VISUALIZATION CSS
+NEED TO MOVE THIS TO A SEPERATE FILE
+=================================================== */
+ul.tabs { list-style: none; margin: 0px; padding: 0px; -webkit-linear-gradient(rgba(255,255,255,0.3), #FAFAFA); width: 100%; }
+ul.tabs li { width: 50%; line-height: 44px; font-size: 18px; font-family: TradeGothic; float: left; text-align: center; color: #999; text-transform: uppercase; background: #fff; }
+ul.tabs li.active { color: #005288;  background: transparent;  }
+#tooltip { font-family: "TradeGothic"; }
+#chart .yAxis .tickLabel { /*transform: rotate(-45deg); -webkit-transform: rotate(-45deg);*/ text-align: right; font-family: "TradeGothic"; }
+#chart .xAxis .tickLabel { /*transform: rotate(-45deg); -webkit-transform: rotate(-45deg);*/ width: 75px; overflow: hidden; text-align: center; font-family: "TradeGothic"; text-overflow: ellipsis; white-space: wrap;}
+
+/* Alison added for locked Settings links 3.25.13 */
+.container a.locked,
+.container a.locked:visited,
+.container a.locked:focus,
+.container a.locked:hover,
+.container a.locked:active {
+	padding-right: 2%;
+	background: transparent url(../images/locked.png) 98% 50% no-repeat;
+}
+
+/* Nikhil for spacing issues */
+#autoPayCustomSpacing {margin-top:2px;}
+#autopayoptiontxt_html {padding-right:15px; margin-top:-13px;}
+p.clarifyingMessage {clear: both; font-size: 0.8em; padding: 0px 15px; margin-top:-5px;}
+#errorMessageLink	{padding:0px;}
+.margintoptwo	{margin-top:2px;}
+.visible {-webkit-backface-visibility: visible;-webkit-transform: translate3d(0,0,0);}
+
+/* Paybills for bank */
+.dateBankPadding{
+padding-top: .5em;
+}
+
+
+
+/*Jason added for ffIEC Text Inputs April 16 2013*/
+body[page="www-cards-securityQuestions-selectQuestions.html"] input{
+margin-bottom: 0px !important;
+}
+
+body[page*="www-cards-securityQuestions"] form > ul.container:last-child {
+	border: none;
+	background-color: transparent;
+}
+
+/* Animation enhancements added by jqk260 */
+/* common class to use for animation performance improvements */
+.smoothAnimation{
+	-webkit-transform: translate3d(0,0,0);
+	-webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
+}
+
